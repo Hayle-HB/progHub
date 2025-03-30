@@ -274,37 +274,37 @@ const AboutUs = () => {
             Key Features
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+        {features.map((feature, index) => (
+          <motion.div
+            key={feature.title}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * (index + 1) }}
-                className="relative group"
-              >
-                <div
-                  className="absolute -inset-0.5 bg-gradient-to-r from-[#4ADE80] to-[#3B82F6] rounded-lg opacity-0 
-                  group-hover:opacity-20 transition-opacity duration-300 blur"
-                />
-                <div
+            className="relative group"
+          >
+            <div
+              className="absolute -inset-0.5 bg-gradient-to-r from-[#4ADE80] to-[#3B82F6] rounded-lg opacity-0 
+              group-hover:opacity-20 transition-opacity duration-300 blur"
+            />
+            <div
                   className="relative bg-[#1E293B] p-4 rounded-lg border border-[#334155] 
-                  group-hover:border-[#4ADE80]/30 transition-all duration-300"
-                >
+              group-hover:border-[#4ADE80]/30 transition-all duration-300"
+            >
                   <div className="flex items-center space-x-3 mb-2">
                     <div className="p-1.5 bg-[#4ADE80]/10 rounded-lg text-[#4ADE80]">
-                      {feature.icon}
-                    </div>
+                  {feature.icon}
+                </div>
                     <h3 className="text-lg font-semibold text-[#E2E8F0]">
-                      {feature.title}
-                    </h3>
-                  </div>
+                  {feature.title}
+                </h3>
+              </div>
                   <p className="text-sm text-[#94A3B8]">
                     {feature.description}
                   </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
         </div>
       ),
     },
@@ -670,13 +670,13 @@ const AboutUs = () => {
             </div>
           ))}
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
             transition={{ duration: 0.4 }}
             className="text-center py-4"
-          >
-            <motion.button
+      >
+        <motion.button
               whileTap={{ opacity: 0.8 }}
               className="px-10 py-3 bg-[#1E293B] text-[#4ADE80] rounded-md
                 border-2 border-[#4ADE80] font-medium 
@@ -684,8 +684,8 @@ const AboutUs = () => {
                 hover:bg-[#4ADE80]/10"
             >
               Become a Member
-            </motion.button>
-          </motion.div>
+        </motion.button>
+      </motion.div>
         </div>
       </div>
     </div>

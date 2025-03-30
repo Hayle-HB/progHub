@@ -1,6 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaInfoCircle, FaUserPlus, FaUsers } from "react-icons/fa";
+import {
+  FaInfoCircle,
+  FaUserPlus,
+  FaUsers,
+  FaCode,
+  FaCrown,
+} from "react-icons/fa";
 
 const NavBar = ({ selectedPath, setSelectedPath }) => {
   const navItems = [
@@ -19,10 +25,20 @@ const NavBar = ({ selectedPath, setSelectedPath }) => {
       label: "Join Core Team",
       icon: FaUsers,
     },
+    {
+      id: "developers",
+      label: "Our Team",
+      icon: FaCode,
+    },
+    {
+      id: "leaders",
+      label: "Leadership",
+      icon: FaCrown,
+    },
   ];
 
   return (
-    <div className="max-w-2xl mx-auto mb-8">
+    <div className="max-w-2xl mx-auto mb-4">
       <div className="relative">
         {/* Background blur effect */}
         <div className="absolute inset-0 bg-[#1E293B]/40 backdrop-blur-sm rounded-lg" />
@@ -31,11 +47,11 @@ const NavBar = ({ selectedPath, setSelectedPath }) => {
         <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#4ADE80]/20 via-transparent to-[#4ADE80]/20" />
 
         {/* Content */}
-        <div className="relative grid grid-cols-3 gap-1 p-1">
+        <div className="relative grid grid-cols-5 gap-0.5 p-0.5">
           {navItems.map((item) => (
             <motion.button
               key={item.id}
-              className={`relative py-2.5 px-4 rounded-md transition-all duration-300
+              className={`relative py-2 px-3 rounded-md transition-all duration-300
                 ${
                   selectedPath === item.id
                     ? "text-[#4ADE80]"
@@ -60,8 +76,8 @@ const NavBar = ({ selectedPath, setSelectedPath }) => {
               )}
 
               {/* Content */}
-              <div className="relative z-10 flex items-center justify-center gap-2">
-                <item.icon className="text-base" />
+              <div className="relative z-10 flex items-center justify-center gap-1.5">
+                <item.icon className="text-sm" />
                 <span className="text-xs font-medium whitespace-nowrap">
                   {item.label}
                 </span>
