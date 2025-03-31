@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import progHubs from "../../../public/progHubs.png";
+import progHubs from "./proghubs.png";
 const AboutUs = () => {
   const [activeSection, setActiveSection] = useState("overview");
   const [progressHeight, setProgressHeight] = useState(0);
