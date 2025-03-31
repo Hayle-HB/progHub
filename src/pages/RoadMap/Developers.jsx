@@ -12,6 +12,12 @@ import {
   FaTimes,
 } from "react-icons/fa";
 
+import Gizachew from "../../assets/Images/Developers/Gizachewu.jpg";
+import Haylemeskel from "../../assets/Images/Developers/Haylemeskel.jpg";
+import Nurhusen from "../../assets/Images/Developers/Nurhusen.jpg";
+import Aman from "../../assets/Images/Developers/AmanMobile.jpg";
+import Dagmawi from "../../assets/Images/Developers/Dagmawi.jpg";
+import Dawit from "../../assets/Images/Developers/DawitSema.jpg";
 const Developers = () => {
   const [selectedRole, setSelectedRole] = useState("All");
   const [selectedSkills, setSelectedSkills] = useState(new Set(["All"]));
@@ -19,62 +25,127 @@ const Developers = () => {
 
   const developers = [
     {
-      name: "Alex Chen",
-      role: "Full Stack Developer",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Alex",
-      bio: "Passionate about building scalable applications and mentoring junior developers.",
-      skills: ["React", "Node.js", "TypeScript", "AWS"],
-      github: "https://github.com/alexchen",
-      linkedin: "https://linkedin.com/in/alexchen",
-      twitter: "https://twitter.com/alexchen",
-      email: "alex.chen@example.com",
-      telegram: "https://t.me/alexchen",
-      portfolio: "https://alexchen.dev",
+      name: "Haylemeskel Haylemariam",
+      role: "Founder & Software Developer",
+      image: Haylemeskel,
+      bio: "Founder of EcoFarmIQ and progHubs. Passionate about AI-driven solutions, team collaboration, and building impactful projects.",
+      skills: [
+        "Microservices",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "MySQL",
+        "Python",
+        "Machine Learning",
+        "REST APIs",
+        "Team Leadership",
+      ],
+      github: "https://www.github.com/Hayle-HB",
+      linkedin:
+        "https://www.linkedin.com/in/haylemeskel-haylemariam-b9212b298/",
+      twitter: "https://x.com/Hayle_HB",
+      email: "haylemeskelhaylemariam@gmail.com",
+      telegram: "https://t.me/Hayle_HB",
+      portfolio: "https://ecofarmiq.vercel.com",
     },
     {
-      name: "Sarah Johnson",
-      role: "Frontend Developer",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
-      bio: "UI/UX enthusiast with a focus on creating beautiful and accessible interfaces.",
-      skills: ["React", "Next.js", "TailwindCSS", "Figma"],
-      github: "https://github.com/sarahj",
-      linkedin: "https://linkedin.com/in/sarahj",
-      twitter: "https://twitter.com/sarahj",
-      website: "https://sarahj.com",
-      email: "sarah.j@example.com",
-      telegram: "https://t.me/sarahj",
-      portfolio: "https://sarahj.dev",
-    },
-    {
-      name: "Michael Rodriguez",
+      name: "Gizachew Mohammed",
       role: "Backend Developer",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Michael",
-      bio: "Backend specialist with expertise in microservices and cloud architecture.",
-      skills: ["Python", "Django", "PostgreSQL", "Docker"],
-      github: "https://github.com/michaelr",
-      linkedin: "https://linkedin.com/in/michaelr",
-      twitter: "https://twitter.com/michaelr",
-      email: "michael.r@example.com",
-      telegram: "https://t.me/michaelr",
-      portfolio: "https://michaelr.dev",
+      image: Gizachew,
+      bio: "Backend Developer passionate about building scalable APIs, optimizing databases, and integrating AI into backend solutions.",
+      skills: [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "MySQL",
+        "Python",
+        "REST APIs",
+      ],
+      github: "https://github.com/gechjs",
+      linkedin: "https://www.linkedin.com/in/gizachew-mohammed/",
+      twitter: "https://twitter.com/GizachewMo50513",
+      email: "gizachew980@gmail.com",
+      telegram: "https://t.me/Gech192127",
+      portfolio: "https://gizachewm.com",
     },
     {
-      name: "Emma Wilson",
-      role: "DevOps Engineer",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Emma",
-      bio: "Infrastructure expert focused on automation and cloud optimization.",
-      skills: ["Kubernetes", "Terraform", "CI/CD", "AWS"],
-      github: "https://github.com/emmaw",
-      linkedin: "https://linkedin.com/in/emmaw",
-      twitter: "https://twitter.com/emmaw",
-      email: "emma.w@example.com",
-      telegram: "https://t.me/emmaw",
-      portfolio: "https://emmaw.dev",
+      name: "Dagmawi Milkias",
+      role: "FrontEnd  Developer",
+      image: Dagmawi,
+      bio: "Passionate about building scalable applications and mentoring junior developers.",
+      skills: ["React", "TailwindCSS", "TypeScript", "Figma"],
+      github: "https://github.com/Dagi2004",
+      linkedin: "https://linkedin.com/dagmawimilkias",
+      twitter: "https://twitter.com/alexchen",
+      email: "dagmawimilkias@gmail.com",
+      telegram: "https://t.me/DagmawiDev",
+      portfolio: "https://dagmawiimilkias.netlify.app/",
     },
+    {
+      name: "Dawit Sema",
+      role: "Mobile Developer",
+      image: Dawit,
+      bio: "Experienced in building scalable Flutter applications, AI automation, and backend systems. Passionate about mentoring and optimizing workflows.",
+      skills: [
+        "Flutter",
+        "Dart",
+        "React",
+        "TailwindCSS",
+        "TypeScript",
+        "Python",
+        "Automation",
+        "Django",
+        "n8n",
+        "Make.com",
+      ],
+      github: "https://github.com/DawitSema",
+      linkedin: "https://linkedin.com/in/DawitSema",
+      twitter: "https://twitter.com/DawitSema",
+      email: "dawitsema2004@gmail.com",
+      telegram: "https://t.me/DawitSema",
+      portfolio: "https://dawitsema.vercel.app/",
+    },
+    {
+      name: "Nurhusen mohammedteum",
+      role: "Frontend Developer",
+      image: Nurhusen,
+      bio: "Fullstack developer specialized on frontend development Passionate about building scalable applications and mentoring junior developers.",
+      skills: [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Javascript",
+        "MySql",
+      ],
+      github: "https://github.com/nurhussenm",
+      linkedin: "https://www.linkedin.com/in/nurhusenm",
+      twitter: "https://x.com/NURHussenM74947",
+      email: "mohammedteumnurhusen@gmail.com",
+      telegram: "https://t.me/NUMUTU",
+      portfolio: "https://nurhussen.netlify.app",
+    },
+
+    {
+      name: "Amanuel Yosef",
+      role: "Mobile App Developer",
+      image: Aman,
+      bio: "Freelance Mobile App Developer | Crafting beautiful, user-friendly apps with Kotlin, Jetpack Compose & Firebase. Let’s turn your app idea into reality! DM for collaborations.",
+      skills: ["Kotlin", "Jetpack compose", "Python", "Flutter"],
+      github: "https://github.com/amanuelyosef",
+      linkedin: "https://www.linkedin.com/in/amanuel-yosef-ab2685333/",
+      twitter: "https://x.com/AmanuYosi",
+      email: "amanuyosi@gmail.com",
+      telegram: "https://t.me/proaman777",
+      portfolio: "https://github.com/amanuelyosef",
+    },
+
     {
       name: "David Kim",
       role: "Mobile Developer",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=David",
+      image: Haylemeskel,
       bio: "Cross-platform mobile developer with a passion for native performance.",
       skills: ["React Native", "Swift", "Kotlin", "Firebase"],
       github: "https://github.com/davidk",
@@ -87,7 +158,8 @@ const Developers = () => {
     {
       name: "Lisa Chen",
       role: "Security Engineer",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Lisa",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop",
       bio: "Security specialist focused on application security and penetration testing.",
       skills: [
         "OWASP",
@@ -105,7 +177,8 @@ const Developers = () => {
     {
       name: "James Smith",
       role: "Frontend Developer",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=James",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop",
       bio: "Specializing in responsive web design and modern JavaScript frameworks.",
       skills: ["Vue.js", "React", "SASS", "Webpack"],
       github: "https://github.com/jamessmith",
@@ -118,7 +191,8 @@ const Developers = () => {
     {
       name: "Maria Garcia",
       role: "Backend Developer",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Maria",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop",
       bio: "Expert in building robust APIs and database optimization.",
       skills: ["Java", "Spring Boot", "MongoDB", "Redis"],
       github: "https://github.com/mariag",
@@ -131,7 +205,8 @@ const Developers = () => {
     {
       name: "Ryan Taylor",
       role: "Full Stack Developer",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ryan",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop",
       bio: "Full stack developer with a strong focus on clean code and best practices.",
       skills: ["Angular", "Node.js", "MySQL", "Docker"],
       github: "https://github.com/ryant",
@@ -144,7 +219,8 @@ const Developers = () => {
     {
       name: "Sophie Anderson",
       role: "DevOps Engineer",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sophie",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop",
       bio: "Passionate about automating deployment processes and improving system reliability.",
       skills: ["Jenkins", "AWS", "Docker", "Ansible"],
       github: "https://github.com/sophiea",
@@ -157,7 +233,8 @@ const Developers = () => {
     {
       name: "Carlos Martinez",
       role: "Mobile Developer",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Carlos",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop",
       bio: "Specialized in native iOS and Android development with cross-platform expertise.",
       skills: ["Swift", "Kotlin", "Flutter", "Firebase"],
       github: "https://github.com/carlosm",
@@ -170,7 +247,8 @@ const Developers = () => {
     {
       name: "Nina Patel",
       role: "Security Engineer",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Nina",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop",
       bio: "Expert in cybersecurity with focus on threat detection and incident response.",
       skills: ["Ethical Hacking", "Network Security", "Cryptography", "SIEM"],
       github: "https://github.com/ninap",
@@ -183,7 +261,8 @@ const Developers = () => {
     {
       name: "Thomas Weber",
       role: "Frontend Developer",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Thomas",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop",
       bio: "Creative developer focusing on interactive web experiences and animations.",
       skills: ["Three.js", "WebGL", "React", "GSAP"],
       github: "https://github.com/thomasw",
@@ -196,7 +275,8 @@ const Developers = () => {
     {
       name: "Julia Lee",
       role: "Full Stack Developer",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Julia",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop",
       bio: "Full stack developer specializing in e-commerce and payment systems.",
       skills: ["Vue.js", "Laravel", "PostgreSQL", "Stripe"],
       github: "https://github.com/julial",
@@ -208,15 +288,28 @@ const Developers = () => {
     },
   ];
 
-  // Extract unique roles and skills
+  // Normalize skills to prevent case-sensitive duplicates
+  const normalizeSkill = (skill) => skill.toLowerCase().trim();
+
+  // Extract unique roles and skills with case-insensitive comparison
   const roles = useMemo(
     () => ["All", ...new Set(developers.map((dev) => dev.role))],
     []
   );
-  const skills = useMemo(
-    () => ["All", ...new Set(developers.flatMap((dev) => dev.skills))],
-    []
-  );
+
+  const skills = useMemo(() => {
+    const skillMap = new Map();
+    developers.forEach((dev) => {
+      dev.skills.forEach((skill) => {
+        const normalizedSkill = normalizeSkill(skill);
+        // Keep the first occurrence of the skill (preserving original casing)
+        if (!skillMap.has(normalizedSkill)) {
+          skillMap.set(normalizedSkill, skill);
+        }
+      });
+    });
+    return ["All", ...Array.from(skillMap.values())].sort();
+  }, []);
 
   const handleSkillClick = (skill) => {
     setSelectedSkills((prev) => {
@@ -240,13 +333,18 @@ const Developers = () => {
     setSelectedSkills(new Set(["All"]));
   };
 
-  // Filter developers based on selected filters
+  // Update the filter logic to be case-insensitive
   const filteredDevelopers = useMemo(() => {
     return developers.filter((dev) => {
       const roleMatch = selectedRole === "All" || dev.role === selectedRole;
       const skillsMatch =
         selectedSkills.has("All") ||
-        Array.from(selectedSkills).every((skill) => dev.skills.includes(skill));
+        Array.from(selectedSkills).every((selectedSkill) =>
+          dev.skills.some(
+            (devSkill) =>
+              normalizeSkill(devSkill) === normalizeSkill(selectedSkill)
+          )
+        );
       return roleMatch && skillsMatch;
     });
   }, [selectedRole, selectedSkills]);
@@ -407,7 +505,7 @@ const Developers = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="relative group"
+              className="relative group h-full"
             >
               {/* Card glow effect */}
               <div
@@ -416,16 +514,22 @@ const Developers = () => {
               />
 
               <div
-                className="relative bg-[#1E293B] rounded-xl p-4 sm:p-6 border border-[#334155] 
-                transition-all duration-500 group-hover:border-[#4ADE80]/10"
+                className="relative bg-[#1E293B] rounded-xl border border-[#334155] 
+                transition-all duration-500 group-hover:border-[#4ADE80]/10 h-full flex flex-col"
               >
-                <div className="flex items-center space-x-3 sm:space-x-4 mb-3 sm:mb-4">
+                {/* Image Container */}
+                <div className="relative w-full h-64 sm:h-72 overflow-hidden rounded-t-xl bg-[#1E293B]">
                   <img
-                    src={dev.avatar}
+                    src={dev.image}
                     alt={dev.name}
-                    className="w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 border-[#4ADE80]/20"
+                    className="absolute inset-0 w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1E293B] via-transparent to-transparent opacity-60" />
+                </div>
+
+                {/* Content Container */}
+                <div className="p-4 sm:p-6 flex flex-col flex-grow">
+                  <div className="mb-3 sm:mb-4">
                     <h3 className="text-lg sm:text-xl font-bold text-[#E2E8F0]">
                       {dev.name}
                     </h3>
@@ -433,82 +537,84 @@ const Developers = () => {
                       {dev.role}
                     </p>
                   </div>
-                </div>
 
-                <p className="text-xs sm:text-sm text-[#94A3B8] mb-3 sm:mb-4">
-                  {dev.bio}
-                </p>
+                  <p className="text-xs sm:text-sm text-[#94A3B8] mb-3 sm:mb-4 line-clamp-3">
+                    {dev.bio}
+                  </p>
 
-                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
-                  {dev.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-2 py-0.5 bg-[#334155] text-[#CBD5E1] text-[10px] sm:text-xs rounded-full"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
+                    {dev.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-2 py-0.5 bg-[#334155] text-[#CBD5E1] text-[10px] sm:text-xs rounded-full"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
 
-                <div className="flex flex-wrap gap-3 sm:gap-4">
-                  <motion.a
-                    href={dev.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="text-[#94A3B8] hover:text-[#4ADE80] transition-colors duration-200"
-                  >
-                    <FaGithub className="w-4 h-4 sm:w-5 sm:h-5" />
-                  </motion.a>
-                  <motion.a
-                    href={dev.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="text-[#94A3B8] hover:text-[#4ADE80] transition-colors duration-200"
-                  >
-                    <FaLinkedin className="w-4 h-4 sm:w-5 sm:h-5" />
-                  </motion.a>
-                  <motion.a
-                    href={dev.twitter}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="text-[#94A3B8] hover:text-[#4ADE80] transition-colors duration-200"
-                  >
-                    <FaTwitter className="w-4 h-4 sm:w-5 sm:h-5" />
-                  </motion.a>
-                  <motion.a
-                    href={dev.telegram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="text-[#94A3B8] hover:text-[#4ADE80] transition-colors duration-200"
-                  >
-                    <FaTelegram className="w-4 h-4 sm:w-5 sm:h-5" />
-                  </motion.a>
-                  <motion.a
-                    href={`mailto:${dev.email}`}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="text-[#94A3B8] hover:text-[#4ADE80] transition-colors duration-200"
-                  >
-                    <FaEnvelope className="w-4 h-4 sm:w-5 sm:h-5" />
-                  </motion.a>
-                  <motion.a
-                    href={dev.portfolio}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="text-[#94A3B8] hover:text-[#4ADE80] transition-colors duration-200"
-                  >
-                    <FaGlobe className="w-4 h-4 sm:w-5 sm:h-5" />
-                  </motion.a>
+                  <div className="flex flex-wrap gap-3 sm:gap-4 mt-auto">
+                    <div className="flex flex-wrap gap-3 sm:gap-4">
+                      <motion.a
+                        href={dev.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="text-[#94A3B8] hover:text-[#4ADE80] transition-colors duration-200"
+                      >
+                        <FaGithub className="w-4 h-4 sm:w-5 sm:h-5" />
+                      </motion.a>
+                      <motion.a
+                        href={dev.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="text-[#94A3B8] hover:text-[#4ADE80] transition-colors duration-200"
+                      >
+                        <FaLinkedin className="w-4 h-4 sm:w-5 sm:h-5" />
+                      </motion.a>
+                      <motion.a
+                        href={dev.twitter}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="text-[#94A3B8] hover:text-[#4ADE80] transition-colors duration-200"
+                      >
+                        <FaTwitter className="w-4 h-4 sm:w-5 sm:h-5" />
+                      </motion.a>
+                      <motion.a
+                        href={dev.telegram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="text-[#94A3B8] hover:text-[#4ADE80] transition-colors duration-200"
+                      >
+                        <FaTelegram className="w-4 h-4 sm:w-5 sm:h-5" />
+                      </motion.a>
+                      <motion.a
+                        href={`mailto:${dev.email}`}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="text-[#94A3B8] hover:text-[#4ADE80] transition-colors duration-200"
+                      >
+                        <FaEnvelope className="w-4 h-4 sm:w-5 sm:h-5" />
+                      </motion.a>
+                      <motion.a
+                        href={dev.portfolio}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="text-[#94A3B8] hover:text-[#4ADE80] transition-colors duration-200"
+                      >
+                        <FaGlobe className="w-4 h-4 sm:w-5 sm:h-5" />
+                      </motion.a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -528,7 +634,7 @@ const Developers = () => {
               </h3>
               <p className="text-xs sm:text-sm text-[#94A3B8]">
                 No developers match your current filter criteria. Try adjusting
-                your filters or{" "}
+                your filters or
                 <button
                   onClick={clearFilters}
                   className="text-[#4ADE80] hover:underline focus:outline-none"
