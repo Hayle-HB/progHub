@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-
+import progHubs from "../../assets/progHubs.png";
 const AboutUs = () => {
   const [activeSection, setActiveSection] = useState("overview");
   const [progressHeight, setProgressHeight] = useState(0);
@@ -274,37 +274,37 @@ const AboutUs = () => {
             Key Features
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {features.map((feature, index) => (
-          <motion.div
-            key={feature.title}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            {features.map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * (index + 1) }}
-            className="relative group"
-          >
-            <div
-              className="absolute -inset-0.5 bg-gradient-to-r from-[#4ADE80] to-[#3B82F6] rounded-lg opacity-0 
+                className="relative group"
+              >
+                <div
+                  className="absolute -inset-0.5 bg-gradient-to-r from-[#4ADE80] to-[#3B82F6] rounded-lg opacity-0 
               group-hover:opacity-20 transition-opacity duration-300 blur"
-            />
-            <div
+                />
+                <div
                   className="relative bg-[#1E293B] p-4 rounded-lg border border-[#334155] 
               group-hover:border-[#4ADE80]/30 transition-all duration-300"
-            >
+                >
                   <div className="flex items-center space-x-3 mb-2">
                     <div className="p-1.5 bg-[#4ADE80]/10 rounded-lg text-[#4ADE80]">
-                  {feature.icon}
-                </div>
+                      {feature.icon}
+                    </div>
                     <h3 className="text-lg font-semibold text-[#E2E8F0]">
-                  {feature.title}
-                </h3>
-              </div>
+                      {feature.title}
+                    </h3>
+                  </div>
                   <p className="text-sm text-[#94A3B8]">
                     {feature.description}
                   </p>
-            </div>
-          </motion.div>
-        ))}
-      </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       ),
     },
@@ -570,13 +570,113 @@ const AboutUs = () => {
   }, [activeSection, progressHeight]);
 
   return (
-    <div className="max-w-6xl mx-auto px-4">
-      <div className="flex flex-col md:flex-row gap-8 min-h-screen">
-        {/* Table of Contents */}
-        <div className="md:w-64 flex-shrink-0">
-          <div className="sticky top-1/2 -translate-y-1/2">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Section */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="relative w-full max-w-2xl mx-auto mb-16 sm:mb-24 pt-8"
+      >
+        {/* Background Glow Effect */}
+        <div className="absolute -inset-0.5 bg-gradient-to-r from-[#4ADE80]/20 via-[#00CED1]/20 to-[#FF8C00]/20 rounded-lg opacity-75 blur-2xl" />
+
+        {/* Image Container */}
+        <div className="relative w-48 h-48 sm:w-56 sm:h-56 mx-auto">
+          <img
+            src={progHubs}
+            alt="progHubs"
+            className="w-full h-full object-contain rounded-lg shadow-2xl"
+          />
+
+          {/* Floating Particles */}
+          <motion.div
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.7, 0.3],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="absolute top-0 left-0 w-full h-full pointer-events-none"
+          >
+            {[...Array(12)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute w-1 h-1 rounded-full bg-[#FF8C00]/30"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animation: `float ${
+                    2 + Math.random() * 3
+                  }s infinite ease-in-out ${Math.random() * 2}s`,
+                }}
+              />
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Tagline */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="text-center mt-8"
+        >
+          <h1 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-[#4ADE80] via-[#00CED1] to-[#FF8C00] text-transparent bg-clip-text">
+            Where Innovation Meets Community
+          </h1>
+          <p className="mt-4 text-[#94A3B8] text-lg max-w-xl mx-auto">
+            Join the next generation of developers shaping the future
+          </p>
+        </motion.div>
+      </motion.div>
+
+      <div className="flex flex-col lg:flex-row gap-8">
+        {/* Mobile Navigation */}
+        <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#1E293B]/95 backdrop-blur-md border-t border-[#334155]">
+          <div className="max-w-6xl mx-auto px-4">
+            {/* Current Section Indicator */}
+            <div className="flex items-center justify-between py-2">
+              <div className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#4ADE80]" />
+                <span className="text-sm font-medium text-[#E2E8F0]">
+                  {sections.find((s) => s.id === activeSection)?.title}
+                </span>
+              </div>
+              <span className="text-xs text-[#4ADE80]">
+                {`${sections.findIndex((s) => s.id === activeSection) + 1} of ${
+                  sections.length
+                }`}
+              </span>
+            </div>
+
+            {/* Navigation Dots */}
+            <div className="flex justify-center gap-1.5 py-2">
+              {sections.map((section, index) => (
+                <button
+                  key={section.id}
+                  onClick={() => scrollToSection(section.id)}
+                  className={`w-1.5 h-1.5 rounded-full transition-all duration-300
+                    ${
+                      activeSection === section.id
+                        ? "bg-[#4ADE80] w-4"
+                        : "bg-[#334155] hover:bg-[#4ADE80]/50"
+                    }`}
+                  aria-label={`Go to ${section.title}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop Navigation */}
+        <div className="hidden lg:block w-64 flex-shrink-0">
+          <div className="sticky top-24">
             <nav className="relative" ref={navRef}>
-              {/* Single line that changes color based on progress */}
+              {/* Progress Line */}
               <div className="absolute right-0 top-0 bottom-0 w-px">
                 <svg
                   className="h-full w-16 absolute -right-8"
@@ -623,7 +723,7 @@ const AboutUs = () => {
                     stroke="url(#progressGradient)"
                     strokeWidth="2"
                     filter="url(#glow)"
-                    className="path-line transition-all duration-800"
+                    className="path-line"
                     style={{
                       transition: "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
                     }}
@@ -631,19 +731,12 @@ const AboutUs = () => {
                 </svg>
               </div>
 
-              <style jsx>{`
-                .path-line {
-                  stroke-linecap: round;
-                  stroke-linejoin: round;
-                }
-              `}</style>
-
               <ul className="space-y-6 relative pr-8">
-                {sections.map((section, index) => (
+                {sections.map((section) => (
                   <li key={section.id} className="relative">
                     <button
                       onClick={() => scrollToSection(section.id)}
-                      className={`text-left w-full group ${
+                      className={`text-left w-full group transition-colors duration-300 ${
                         activeSection === section.id
                           ? "text-[#4ADE80]"
                           : "text-[#94A3B8] hover:text-[#E2E8F0]"
@@ -659,35 +752,49 @@ const AboutUs = () => {
         </div>
 
         {/* Content */}
-        <div className="flex-1 space-y-24">
+        <div className="flex-1 space-y-16 sm:space-y-24 pb-20 lg:pb-0">
           {sections.map((section) => (
             <div
               key={section.id}
               ref={(el) => (contentRefs.current[section.id] = el)}
-              className="scroll-mt-16"
+              className="scroll-mt-8 sm:scroll-mt-16"
             >
-              {section.content}
+              <div className="space-y-8">{section.content}</div>
             </div>
           ))}
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+          {/* CTA Button */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.4 }}
-            className="text-center py-4"
-      >
-        <motion.button
-              whileTap={{ opacity: 0.8 }}
-              className="px-10 py-3 bg-[#1E293B] text-[#4ADE80] rounded-md
+            className="text-center py-4 sm:py-8"
+          >
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="px-6 sm:px-10 py-2.5 sm:py-3 bg-[#1E293B] text-[#4ADE80] rounded-md
                 border-2 border-[#4ADE80] font-medium 
                 transition-all duration-200
                 hover:bg-[#4ADE80]/10"
             >
               Become a Member
-        </motion.button>
-      </motion.div>
+            </motion.button>
+          </motion.div>
         </div>
       </div>
+
+      <style jsx global>{`
+        @keyframes float {
+          0%,
+          100% {
+            transform: translateY(0) scale(1);
+          }
+          50% {
+            transform: translateY(-10px) scale(1.2);
+          }
+        }
+      `}</style>
     </div>
   );
 };
