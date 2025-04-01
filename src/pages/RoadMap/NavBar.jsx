@@ -10,6 +10,7 @@ import {
   FaGamepad,
   FaBars,
   FaTimes,
+  FaHome,
 } from "react-icons/fa";
 
 const NavBar = () => {
@@ -18,6 +19,12 @@ const NavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
+    {
+      id: "home",
+      label: "Home",
+      icon: FaHome,
+      path: "/",
+    },
     {
       id: "about",
       label: "About progHubs",
@@ -61,10 +68,14 @@ const NavBar = () => {
     setIsMobileMenuOpen(false);
   };
 
+  const handleCloseMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
-    <div className="max-w-3xl mx-auto mb-4 px-4 sm:px-6 relative">
+    <>
       {/* Desktop Navigation */}
-      <div className="hidden sm:block relative">
+      <div className="hidden sm:block max-w-3xl mx-auto mb-4 px-4 sm:px-6 relative">
         {/* Background blur effect */}
         <div className="absolute inset-0 bg-[#1E293B]/40 backdrop-blur-sm rounded-lg" />
 
@@ -72,11 +83,11 @@ const NavBar = () => {
         <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#4ADE80]/20 via-transparent to-[#4ADE80]/20" />
 
         {/* Content */}
-        <div className="relative grid grid-cols-6 gap-0.5 p-0.5">
+        <div className="relative grid grid-cols-7 gap-0.5 p-0.5">
           {navItems.map((item) => (
             <motion.button
               key={item.id}
-              className={`relative py-2 px-3 rounded-md transition-all duration-300
+              className={`relative py-2 px-3 rounded-md transition-all duration-300 cursor-pointer
                 ${
                   location.pathname === item.path
                     ? "text-[#4ADE80]"
@@ -120,37 +131,42 @@ const NavBar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <div className="sm:hidden relative">
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="w-full flex items-center justify-between p-3 bg-[#1E293B] rounded-lg border border-[#334155] text-[#94A3B8] hover:bg-[#1E293B]/80 transition-colors"
-        >
-          <div className="flex items-center gap-2">
-            {isMobileMenuOpen ? (
-              <FaTimes className="w-4 h-4 text-[#4ADE80]" />
-            ) : (
-              <FaBars className="w-4 h-4" />
-            )}
-            <span className="text-sm font-medium">Menu</span>
+      <div className="sm:hidden">
+        {/* Mobile Header */}
+        <div className="fixed top-0 left-0 right-0 z-[60]">
+          <div className="flex items-center justify-between p-3 bg-[#1E293B] border-b border-[#334155]">
+            <div className="flex items-center gap-2">
+              <span className="text-lg font-bold text-[#4ADE80] cursor-pointer">
+                progHubs
+              </span>
+            </div>
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 rounded-lg hover:bg-[#334155] transition-colors cursor-pointer"
+            >
+              {isMobileMenuOpen ? (
+                <FaTimes className="w-5 h-5 text-[#4ADE80]" />
+              ) : (
+                <FaBars className="w-5 h-5 text-[#94A3B8]" />
+              )}
+            </button>
           </div>
-          {location.pathname !== "/" && (
-            <span className="text-xs text-[#4ADE80] truncate max-w-[150px]">
-              {navItems.find((item) => item.path === location.pathname)?.label}
-            </span>
-          )}
-        </button>
+        </div>
+
+        {/* Add padding to account for fixed header */}
+        <div className="h-16" />
 
         <AnimatePresence>
           {isMobileMenuOpen && (
             <>
-              {/* Backdrop */}
+              {/* Fixed Full-width Background */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
-                onClick={() => setIsMobileMenuOpen(false)}
+                className="fixed inset-0 bg-[#1E293B]/80 backdrop-blur-md z-[40] cursor-pointer"
+                onClick={handleCloseMenu}
               />
 
               {/* Menu */}
@@ -159,15 +175,17 @@ const NavBar = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.2 }}
-                className="absolute left-0 right-0 top-full mt-2 z-50"
+                className="fixed inset-0 z-[50]"
+                onClick={(e) => e.stopPropagation()}
               >
-                <div className="mx-4 bg-[#1E293B] rounded-lg border border-[#334155] shadow-xl overflow-hidden">
-                  <div className="max-h-[calc(100vh-120px)] overflow-y-auto py-2 scrollbar-thin scrollbar-track-[#1E293B] scrollbar-thumb-[#334155] hover:scrollbar-thumb-[#4ADE80]/20">
+                <div className="h-full flex flex-col">
+                  {/* Menu Items */}
+                  <div className="flex-1 overflow-y-auto py-2 mt-16 scrollbar-thin scrollbar-track-[#1E293B] scrollbar-thumb-[#334155] hover:scrollbar-thumb-[#4ADE80]/20">
                     {navItems.map((item, index) => (
                       <motion.button
                         key={item.id}
                         onClick={() => handleNavigation(item.path)}
-                        className={`flex items-center gap-3 w-full px-4 py-3 transition-all duration-300
+                        className={`flex items-center gap-3 w-full px-4 py-3 transition-all duration-300 cursor-pointer
                           ${
                             index !== navItems.length - 1
                               ? "border-b border-[#334155]/50"
@@ -207,7 +225,7 @@ const NavBar = () => {
           )}
         </AnimatePresence>
       </div>
-    </div>
+    </>
   );
 };
 

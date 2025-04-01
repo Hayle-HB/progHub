@@ -18,7 +18,7 @@ import Nurhusen from "../../assets/Images/Developers/Nurhusen.jpg";
 import Aman from "../../assets/Images/Developers/AmanMobile.jpg";
 import Dagmawi from "../../assets/Images/Developers/Dagmawi.jpg";
 import Dawit from "../../assets/Images/Developers/DawitSema.jpg";
-import DagmawitNegash from "../../assets/Images/Developers/DagmawitNegash.jpg";
+import DagmawitNegash from "../../assets/Images/Developers/DagnawutNegash12.jpg";
 
 const Developers = () => {
   const [selectedRole, setSelectedRole] = useState("All");
@@ -55,7 +55,7 @@ const Developers = () => {
       role: "Backend Developer",
       image: DagmawitNegash,
       bio: "Passionate about building scalable website and mentoring junior developers.",
-      skills: ["Python", "Node.js", "Fjango"],
+      skills: ["Python", "Node.js", "Django", "Mysql", "MongoDB", "Express.js"],
       github: "https://github.com/DagmawitN",
       linkedin:
         "https://www.linkedin.com/in/dagmawit-negash-1950a3304?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
