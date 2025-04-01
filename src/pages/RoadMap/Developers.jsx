@@ -18,6 +18,8 @@ import Nurhusen from "../../assets/Images/Developers/Nurhusen.jpg";
 import Aman from "../../assets/Images/Developers/AmanMobile.jpg";
 import Dagmawi from "../../assets/Images/Developers/Dagmawi.jpg";
 import Dawit from "../../assets/Images/Developers/DawitSema.jpg";
+import DagmawitNegash from "../../assets/Images/Developers/DagmawitNegash.jpg";
+
 const Developers = () => {
   const [selectedRole, setSelectedRole] = useState("All");
   const [selectedSkills, setSelectedSkills] = useState(new Set(["All"]));
@@ -49,24 +51,18 @@ const Developers = () => {
       portfolio: "https://ecofarmiq.vercel.com",
     },
     {
-      name: "Gizachew Mohammed",
+      name: "Dagmawit Negash",
       role: "Backend Developer",
-      image: Gizachew,
-      bio: "Backend Developer passionate about building scalable APIs, optimizing databases, and integrating AI into backend solutions.",
-      skills: [
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "MySQL",
-        "Python",
-        "REST APIs",
-      ],
-      github: "https://github.com/gechjs",
-      linkedin: "https://www.linkedin.com/in/gizachew-mohammed/",
-      twitter: "https://twitter.com/GizachewMo50513",
-      email: "gizachew980@gmail.com",
-      telegram: "https://t.me/Gech192127",
-      portfolio: "https://gizachewm.com",
+      image: DagmawitNegash,
+      bio: "Passionate about building scalable website and mentoring junior developers.",
+      skills: ["Python", "Node.js", "Fjango"],
+      github: "https://github.com/DagmawitN",
+      linkedin:
+        "https://www.linkedin.com/in/dagmawit-negash-1950a3304?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      twitter: "",
+      email: "21dagmawitnegash@gmail.com",
+      telegram: "https://t.me/Daginegash",
+      portfolio: "https://github.com/Cam-Link/local-server",
     },
     {
       name: "Dagmawi Milkias",
@@ -89,6 +85,27 @@ const Developers = () => {
       telegram: "https://t.me/DagmawiDev",
       portfolio: "https://dagmawiimilkias.netlify.app/",
     },
+    {
+      name: "Gizachew Mohammed",
+      role: "Backend Developer",
+      image: Gizachew,
+      bio: "Backend Developer passionate about building scalable APIs, optimizing databases, and integrating AI into backend solutions.",
+      skills: [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "MySQL",
+        "Python",
+        "REST APIs",
+      ],
+      github: "https://github.com/gechjs",
+      linkedin: "https://www.linkedin.com/in/gizachew-mohammed/",
+      twitter: "https://twitter.com/GizachewMo50513",
+      email: "gizachew980@gmail.com",
+      telegram: "https://t.me/Gech192127",
+      portfolio: "https://gizachewm.com",
+    },
+
     {
       name: "Dawit Sema",
       role: "Mobile Developer",
