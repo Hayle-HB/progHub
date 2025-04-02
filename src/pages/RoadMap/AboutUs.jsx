@@ -576,61 +576,156 @@ const AboutUs = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="relative w-full max-w-2xl mx-auto mb-16 sm:mb-24 pt-8"
+        className="relative w-full max-w-6xl mx-auto mb-12 sm:mb-16 lg:mb-24 pt-6 sm:pt-8 lg:pt-12"
       >
-        {/* Background Glow Effect */}
-        <div className="absolute -inset-0.5 bg-gradient-to-r from-[#4ADE80]/20 via-[#00CED1]/20 to-[#FF8C00]/20 rounded-lg opacity-75 blur-2xl" />
+        {/* Main Container */}
+        <div className="relative flex flex-col lg:flex-row items-center gap-6 sm:gap-8 lg:gap-12">
+          {/* Text Content */}
+          <div className="flex-1 text-center lg:text-left space-y-4 sm:space-y-6">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight"
+            >
+              <span className="bg-gradient-to-r from-[#4ADE80] via-[#00CED1] to-[#FF8C00] text-transparent bg-clip-text">
+                Where Innovation
+              </span>
+              <br />
+              <span className="text-[#E2E8F0]">Meets Community</span>
+            </motion.h1>
 
-        {/* Image Container */}
-        <div className="relative w-48 h-48 sm:w-56 sm:h-56 mx-auto">
-          <img
-            src={progHubs}
-            alt="progHubs"
-            className="w-full h-full object-contain rounded-lg shadow-2xl"
-          />
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="text-base sm:text-lg lg:text-xl text-[#94A3B8] max-w-xl mx-auto lg:mx-0 leading-relaxed"
+            >
+              Join the next generation of developers shaping the future through
+              collaboration and innovation.
+            </motion.p>
 
-          {/* Floating Particles */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4"
+            >
+              <button className="px-4 sm:px-6 py-2.5 sm:py-3 bg-[#4ADE80] text-[#1E293B] rounded-lg font-medium hover:bg-[#4ADE80]/90 transition-colors text-sm sm:text-base">
+                Get Started
+              </button>
+              <button className="px-4 sm:px-6 py-2.5 sm:py-3 border border-[#4ADE80] text-[#4ADE80] rounded-lg font-medium hover:bg-[#4ADE80]/10 transition-colors text-sm sm:text-base">
+                Learn More
+              </button>
+            </motion.div>
+          </div>
+
+          {/* Image Container */}
           <motion.div
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.7, 0.3],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="absolute top-0 left-0 w-full h-full pointer-events-none"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="relative w-full max-w-[280px] xs:max-w-[320px] sm:max-w-[400px] lg:max-w-[500px]"
           >
-            {[...Array(12)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute w-1 h-1 rounded-full bg-[#FF8C00]/30"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  animation: `float ${
-                    2 + Math.random() * 3
-                  }s infinite ease-in-out ${Math.random() * 2}s`,
-                }}
-              />
-            ))}
+            {/* Background Glow Effects */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#4ADE80]/30 to-[#3B82F6]/30 rounded-2xl sm:rounded-3xl blur-2xl sm:blur-3xl" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#FF8C00]/30 to-[#4ADE80]/30 rounded-2xl sm:rounded-3xl blur-2xl sm:blur-3xl" />
+
+            {/* Main Image Container */}
+            <div className="relative bg-[#1E293B] rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-[#334155] shadow-xl sm:shadow-2xl">
+              {/* Image Frame */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#4ADE80]/10 to-[#3B82F6]/10 rounded-2xl sm:rounded-3xl transform rotate-3" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#FF8C00]/10 to-[#4ADE80]/10 rounded-2xl sm:rounded-3xl transform -rotate-3" />
+
+              {/* Main Image */}
+              <div className="relative aspect-square rounded-xl sm:rounded-2xl overflow-hidden">
+                <img
+                  src={progHubs}
+                  alt="progHubs"
+                  className="w-full h-full object-contain transform hover:scale-105 transition-transform duration-500"
+                />
+
+                {/* Image Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1E293B]/60 via-[#1E293B]/20 to-transparent" />
+              </div>
+
+              {/* Decorative Elements */}
+              <div className="absolute -top-4 sm:-top-6 -left-4 sm:-left-6 w-8 h-8 sm:w-12 sm:h-12 bg-[#4ADE80]/20 rounded-full blur-lg sm:blur-xl" />
+              <div className="absolute -bottom-4 sm:-bottom-6 -right-4 sm:-right-6 w-8 h-8 sm:w-12 sm:h-12 bg-[#3B82F6]/20 rounded-full blur-lg sm:blur-xl" />
+              <div className="absolute top-1/2 -right-4 sm:-right-6 w-8 h-8 sm:w-12 sm:h-12 bg-[#FF8C00]/20 rounded-full blur-lg sm:blur-xl" />
+            </div>
+
+            {/* Floating Elements */}
+            <motion.div
+              animate={{
+                y: [0, -15, 0],
+                rotate: [0, 5, 0],
+                scale: [1, 1.1, 1],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="absolute -top-8 sm:-top-10 -right-8 sm:-right-10 w-16 h-16 sm:w-20 sm:h-20 bg-[#4ADE80]/10 rounded-full blur-xl sm:blur-2xl"
+            />
+            <motion.div
+              animate={{
+                y: [0, 15, 0],
+                rotate: [0, -5, 0],
+                scale: [1, 1.1, 1],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1,
+              }}
+              className="absolute -bottom-8 sm:-bottom-10 -left-8 sm:-left-10 w-16 h-16 sm:w-20 sm:h-20 bg-[#3B82F6]/10 rounded-full blur-xl sm:blur-2xl"
+            />
           </motion.div>
         </div>
 
-        {/* Tagline */}
+        {/* Scroll Down Button */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-          className="text-center mt-8"
+          transition={{ delay: 0.8 }}
+          className="absolute bottom-2 sm:bottom-4 lg:bottom-8 left-1/4 -translate-x-1/2 z-10"
         >
-          <h1 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-[#4ADE80] via-[#00CED1] to-[#FF8C00] text-transparent bg-clip-text">
-            Where Innovation Meets Community
-          </h1>
-          <p className="mt-4 text-[#94A3B8] text-lg max-w-xl mx-auto">
-            Join the next generation of developers shaping the future
-          </p>
+          <motion.button
+            onClick={() => scrollToSection("overview")}
+            className="group flex flex-col items-center gap-1 sm:gap-1.5 text-[#94A3B8] hover:text-[#4ADE80] transition-colors"
+          >
+            <span className="text-[10px] xs:text-xs sm:text-sm font-medium">
+              Scroll Down
+            </span>
+            <motion.div
+              animate={{
+                y: [0, 6, 0],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 rounded-full border-2 border-current flex items-center justify-center"
+            >
+              <svg
+                className="w-2 h-2 xs:w-2.5 xs:h-2.5 sm:w-3 sm:h-3"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                />
+              </svg>
+            </motion.div>
+          </motion.button>
         </motion.div>
       </motion.div>
 
@@ -783,18 +878,6 @@ const AboutUs = () => {
           </motion.div>
         </div>
       </div>
-
-      <style jsx global>{`
-        @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0) scale(1);
-          }
-          50% {
-            transform: translateY(-10px) scale(1.2);
-          }
-        }
-      `}</style>
     </div>
   );
 };

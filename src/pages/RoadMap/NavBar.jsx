@@ -20,12 +20,6 @@ const NavBar = () => {
 
   const navItems = [
     {
-      id: "home",
-      label: "Home",
-      icon: FaHome,
-      path: "/",
-    },
-    {
       id: "about",
       label: "About progHubs",
       icon: FaInfoCircle,
@@ -75,59 +69,53 @@ const NavBar = () => {
   return (
     <>
       {/* Desktop Navigation */}
-      <div className="hidden sm:block max-w-3xl mx-auto mb-4 px-4 sm:px-6 relative">
-        {/* Background blur effect */}
-        <div className="absolute inset-0 bg-[#1E293B]/40 backdrop-blur-sm rounded-lg" />
-
-        {/* Gradient border */}
-        <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#4ADE80]/20 via-transparent to-[#4ADE80]/20" />
-
-        {/* Content */}
-        <div className="relative grid grid-cols-7 gap-0.5 p-0.5">
-          {navItems.map((item) => (
-            <motion.button
-              key={item.id}
-              className={`relative py-2 px-3 rounded-md transition-all duration-300 cursor-pointer
-                ${
-                  location.pathname === item.path
-                    ? "text-[#4ADE80]"
-                    : "text-[#94A3B8] hover:text-white/90"
-                }`}
-              onClick={() => handleNavigation(item.path)}
-              whileHover={{ scale: 1.01 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              {/* Active indicator */}
-              {location.pathname === item.path && (
-                <motion.div
-                  className="absolute inset-0 rounded-md bg-gradient-to-r from-[#4ADE80]/10 to-[#22C55E]/10"
-                  layoutId="activeButton"
-                  initial={false}
-                  transition={{
-                    type: "spring",
-                    stiffness: 500,
-                    damping: 35,
-                  }}
-                />
-              )}
-
-              {/* Content */}
-              <div className="relative z-10 flex items-center justify-center gap-1.5">
-                <item.icon className="text-sm" />
-                <span className="text-xs font-medium whitespace-nowrap">
-                  {item.label}
+      <div className="hidden sm:block">
+        <div className="fixed top-0 left-0 right-0 z-[60]">
+          <div className="w-[80%] mx-auto">
+            <div className="flex items-center justify-between p-3 bg-[#1E293B] border-b border-[#334155] rounded-b-lg">
+              <div className="flex items-center gap-2">
+                <span className="text-lg font-bold text-[#4ADE80] cursor-pointer">
+                  progHubs
                 </span>
               </div>
-
-              {/* Hover effect */}
-              <motion.div
-                className="absolute inset-0 rounded-md bg-[#4ADE80]/5 opacity-0"
-                whileHover={{ opacity: 1 }}
-                transition={{ duration: 0.2 }}
-              />
-            </motion.button>
-          ))}
+              <nav className="flex items-center gap-1">
+                {navItems.map((item) => (
+                  <motion.button
+                    key={item.id}
+                    onClick={() => handleNavigation(item.path)}
+                    className={`relative px-4 py-2 rounded-md transition-all duration-300 cursor-pointer flex items-center gap-2
+                      ${
+                        location.pathname === item.path
+                          ? "text-[#4ADE80]"
+                          : "text-[#94A3B8] hover:text-white/90"
+                      }`}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <item.icon className="w-4 h-4 flex-shrink-0" />
+                    <span className="text-sm font-medium whitespace-nowrap">
+                      {item.label}
+                    </span>
+                    {location.pathname === item.path && (
+                      <motion.div
+                        layoutId="desktopActiveIndicator"
+                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#4ADE80] rounded-full"
+                        initial={false}
+                        transition={{
+                          type: "spring",
+                          stiffness: 500,
+                          damping: 35,
+                        }}
+                      />
+                    )}
+                  </motion.button>
+                ))}
+              </nav>
+            </div>
+          </div>
         </div>
+        {/* Add padding to account for fixed header */}
+        <div className="h-16" />
       </div>
 
       {/* Mobile Navigation */}
