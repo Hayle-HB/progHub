@@ -7,7 +7,7 @@ import BecomeAMember from "./pages/RoadMap/BecomeAMember";
 import Developers from "./pages/RoadMap/Developers";
 import Leaders from "./pages/RoadMap/Leaders";
 import Game from "./pages/Games/Game";
-import Footer from "./pages/RoadMap/Foooter";
+import Footer from "./pages/RoadMap/Footer";
 
 const App = () => {
   return (

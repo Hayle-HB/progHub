@@ -157,7 +157,7 @@ const Developers = () => {
       name: "Amanuel Yosef",
       role: "Mobile App Developer",
       image: Aman,
-      bio: "Freelance Mobile App Developer | Crafting beautiful, user-friendly apps with Kotlin, Jetpack Compose & Firebase. Let’s turn your app idea into reality! DM for collaborations.",
+      bio: "Freelance Mobile App Developer | Crafting beautiful, user-friendly apps with Kotlin, Jetpack Compose & Firebase. Let's turn your app idea into reality! DM for collaborations.",
       skills: ["Kotlin", "Jetpack compose", "Python", "Flutter"],
       github: "https://github.com/amanuelyosef",
       linkedin: "https://www.linkedin.com/in/amanuel-yosef-ab2685333/",
@@ -391,22 +391,22 @@ const Developers = () => {
       </div>
 
       {/* Filter Toggle Button */}
-      <div className="flex flex-col xs:flex-row flex-wrap gap-2 mb-4 items-start xs:items-center">
+      <div className="flex flex-col xs:flex-row flex-wrap gap-1.5 mb-3 items-start xs:items-center">
         <button
           onClick={() => setIsFilterOpen(!isFilterOpen)}
-          className="w-full xs:w-auto px-3 sm:px-4 py-2 flex items-center justify-between bg-[#1E293B] rounded-lg border border-[#334155] text-[#94A3B8] hover:border-[#4ADE80]/20"
+          className="w-full xs:w-auto px-2.5 sm:px-3 py-1.5 flex items-center justify-between bg-[#1E293B] rounded-lg border border-[#334155] text-[#94A3B8] hover:border-[#4ADE80]/20"
         >
-          <div className="flex items-center gap-2">
-            <FaFilter className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
-            <span className="text-xs sm:text-sm">Filters</span>
+          <div className="flex items-center gap-1.5">
+            <FaFilter className="w-2 h-2 sm:w-2.5 sm:h-2.5" />
+            <span className="text-xs">Filters</span>
             {activeFiltersCount > 0 && (
-              <span className="px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-xs bg-[#4ADE80]/10 text-[#4ADE80] rounded-full">
+              <span className="px-1 py-0.5 text-[10px] bg-[#4ADE80]/10 text-[#4ADE80] rounded-full">
                 {activeFiltersCount}
               </span>
             )}
           </div>
           <FaChevronDown
-            className={`w-2.5 h-2.5 sm:w-3 sm:h-3 transition-transform ${
+            className={`w-2 h-2 sm:w-2.5 sm:h-2.5 transition-transform ${
               isFilterOpen ? "rotate-180" : ""
             }`}
           />
@@ -414,16 +414,16 @@ const Developers = () => {
 
         {/* Active Filters Display */}
         {activeFiltersCount > 0 && (
-          <div className="flex flex-wrap gap-1.5 sm:gap-2 items-center w-full xs:w-auto xs:flex-1 mt-2 xs:mt-0">
+          <div className="flex flex-wrap gap-1 items-center w-full xs:w-auto xs:flex-1 mt-1.5 xs:mt-0">
             {selectedRole !== "All" && (
-              <div className="flex items-center gap-1 px-2 py-0.5 sm:py-1 bg-[#1E293B] rounded-md border border-[#334155] text-[10px] sm:text-xs">
+              <div className="flex items-center gap-1 px-1.5 py-0.5 bg-[#1E293B] rounded-md border border-[#334155] text-[10px]">
                 <span className="text-[#94A3B8]">Role: </span>
                 <span className="text-[#4ADE80]">{selectedRole}</span>
                 <button
                   onClick={() => setSelectedRole("All")}
-                  className="ml-1 text-[#EF4444] hover:text-[#EF4444] transition-colors"
+                  className="ml-0.5 text-[#EF4444] hover:text-[#EF4444] transition-colors"
                 >
-                  <FaTimes className="w-2 h-2" />
+                  <FaTimes className="w-1.5 h-1.5" />
                 </button>
               </div>
             )}
@@ -431,20 +431,20 @@ const Developers = () => {
               Array.from(selectedSkills).map((skill) => (
                 <div
                   key={skill}
-                  className="flex items-center gap-1 px-2 py-0.5 sm:py-1 bg-[#1E293B] rounded-md border border-[#334155] text-[10px] sm:text-xs"
+                  className="flex items-center gap-1 px-1.5 py-0.5 bg-[#1E293B] rounded-md border border-[#334155] text-[10px]"
                 >
                   <span className="text-[#4ADE80]">{skill}</span>
                   <button
                     onClick={() => handleSkillClick(skill)}
-                    className="ml-1 text-[#EF4444] hover:text-[#EF4444] transition-colors"
+                    className="ml-0.5 text-[#EF4444] hover:text-[#EF4444] transition-colors"
                   >
-                    <FaTimes className="w-2 h-2" />
+                    <FaTimes className="w-1.5 h-1.5" />
                   </button>
                 </div>
               ))}
             <button
               onClick={clearFilters}
-              className="px-2 py-0.5 sm:py-1 text-[10px] sm:text-xs bg-[#1E293B] rounded-md border border-[#334155] text-[#EF4444] 
+              className="px-1.5 py-0.5 text-[10px] bg-[#1E293B] rounded-md border border-[#334155] text-[#EF4444] 
                 hover:bg-[#EF4444]/10 hover:border-[#EF4444]/20 transition-all duration-300"
             >
               Clear all
@@ -463,16 +463,14 @@ const Developers = () => {
             transition={{ duration: 0.2 }}
             className="overflow-hidden"
           >
-            <div className="mb-6 flex flex-col xs:flex-row flex-wrap items-start gap-3 bg-[#1E293B]/50 rounded-lg p-3 sm:p-4">
+            <div className="mb-4 flex flex-col xs:flex-row flex-wrap items-start gap-2 bg-[#1E293B]/50 rounded-lg p-2 sm:p-3">
               {/* Role Filter Dropdown */}
-              <div className="flex flex-col gap-1.5 w-full xs:w-auto">
-                <span className="text-[10px] sm:text-xs text-[#94A3B8]">
-                  Role:
-                </span>
+              <div className="flex flex-col gap-1 w-full xs:w-auto">
+                <span className="text-[10px] text-[#94A3B8]">Role:</span>
                 <select
                   value={selectedRole}
                   onChange={(e) => setSelectedRole(e.target.value)}
-                  className="w-full xs:w-auto px-2 sm:px-3 py-1 text-[10px] sm:text-xs rounded-md bg-[#1E293B] text-[#94A3B8] border border-transparent
+                  className="w-full xs:w-auto px-2 py-1 text-[10px] rounded-md bg-[#1E293B] text-[#94A3B8] border border-transparent
                     hover:border-[#4ADE80]/20 hover:bg-[#4ADE80]/10 hover:text-[#4ADE80]
                     focus:outline-none focus:border-[#4ADE80]/20 focus:bg-[#4ADE80]/10 focus:text-[#4ADE80]"
                   style={{ WebkitAppearance: "none", MozAppearance: "none" }}
@@ -491,17 +489,17 @@ const Developers = () => {
 
               {/* Skills Filter Buttons */}
               <div className="flex-1 w-full xs:w-auto">
-                <div className="flex items-center justify-between mb-1.5">
-                  <span className="text-[10px] sm:text-xs text-[#94A3B8]">
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-[10px] text-[#94A3B8]">
                     Skills (matches all selected):
                   </span>
                 </div>
-                <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                <div className="flex flex-wrap gap-1">
                   {skills.map((skill) => (
                     <button
                       key={skill}
                       onClick={() => handleSkillClick(skill)}
-                      className={`group px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs rounded-md transition-all duration-300 flex items-center gap-1
+                      className={`group px-1.5 py-0.5 text-[10px] rounded-md transition-all duration-300 flex items-center gap-1
                         ${
                           selectedSkills.has(skill)
                             ? "bg-[#4ADE80]/10 text-[#4ADE80] border border-[#4ADE80]/20"
@@ -510,7 +508,7 @@ const Developers = () => {
                     >
                       {skill}
                       {selectedSkills.has(skill) && skill !== "All" && (
-                        <FaTimes className="w-1.5 h-1.5 sm:w-2 sm:h-2 opacity-0 group-hover:opacity-100" />
+                        <FaTimes className="w-1.5 h-1.5 opacity-0 group-hover:opacity-100" />
                       )}
                     </button>
                   ))}
@@ -522,7 +520,7 @@ const Developers = () => {
       </AnimatePresence>
 
       {/* Developer Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
         {filteredDevelopers.length > 0 ? (
           filteredDevelopers.map((dev, index) => (
             <motion.div
@@ -543,7 +541,7 @@ const Developers = () => {
                 transition-all duration-500 group-hover:border-[#4ADE80]/10 h-full flex flex-col"
               >
                 {/* Image Container */}
-                <div className="relative w-full h-64 sm:h-72 overflow-hidden rounded-t-xl bg-[#1E293B]">
+                <div className="relative w-full h-48 sm:h-52 overflow-hidden rounded-t-xl bg-[#1E293B]">
                   <img
                     src={dev.image}
                     alt={dev.name}
@@ -553,33 +551,38 @@ const Developers = () => {
                 </div>
 
                 {/* Content Container */}
-                <div className="p-4 sm:p-6 flex flex-col flex-grow">
-                  <div className="mb-3 sm:mb-4">
-                    <h3 className="text-lg sm:text-xl font-bold text-[#E2E8F0]">
+                <div className="p-3 sm:p-4 flex flex-col flex-grow">
+                  <div className="mb-2 sm:mb-3">
+                    <h3 className="text-base sm:text-lg font-bold text-[#E2E8F0] line-clamp-1">
                       {dev.name}
                     </h3>
-                    <p className="text-xs sm:text-sm text-[#4ADE80]">
+                    <p className="text-xs text-[#4ADE80] line-clamp-1">
                       {dev.role}
                     </p>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-[#94A3B8] mb-3 sm:mb-4 line-clamp-3">
+                  <p className="text-xs text-[#94A3B8] mb-2 sm:mb-3 line-clamp-2">
                     {dev.bio}
                   </p>
 
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
-                    {dev.skills.map((skill) => (
+                  <div className="flex flex-wrap gap-1 sm:gap-1.5 mb-2 sm:mb-3">
+                    {dev.skills.slice(0, 3).map((skill) => (
                       <span
                         key={skill}
-                        className="px-2 py-0.5 bg-[#334155] text-[#CBD5E1] text-[10px] sm:text-xs rounded-full"
+                        className="px-1.5 py-0.5 bg-[#334155] text-[#CBD5E1] text-[10px] rounded-full"
                       >
                         {skill}
                       </span>
                     ))}
+                    {dev.skills.length > 3 && (
+                      <span className="px-1.5 py-0.5 bg-[#334155] text-[#CBD5E1] text-[10px] rounded-full">
+                        +{dev.skills.length - 3}
+                      </span>
+                    )}
                   </div>
 
-                  <div className="flex flex-wrap gap-3 sm:gap-4 mt-auto">
-                    <div className="flex flex-wrap gap-3 sm:gap-4">
+                  <div className="flex flex-wrap gap-2 sm:gap-3 mt-auto">
+                    <div className="flex flex-wrap gap-2 sm:gap-3">
                       <motion.a
                         href={dev.github}
                         target="_blank"
@@ -588,7 +591,7 @@ const Developers = () => {
                         whileTap={{ scale: 0.95 }}
                         className="text-[#94A3B8] hover:text-[#4ADE80] transition-colors duration-200"
                       >
-                        <FaGithub className="w-4 h-4 sm:w-5 sm:h-5" />
+                        <FaGithub className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                       </motion.a>
                       <motion.a
                         href={dev.linkedin}
@@ -598,7 +601,7 @@ const Developers = () => {
                         whileTap={{ scale: 0.95 }}
                         className="text-[#94A3B8] hover:text-[#4ADE80] transition-colors duration-200"
                       >
-                        <FaLinkedin className="w-4 h-4 sm:w-5 sm:h-5" />
+                        <FaLinkedin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                       </motion.a>
                       <motion.a
                         href={dev.twitter}
@@ -608,7 +611,7 @@ const Developers = () => {
                         whileTap={{ scale: 0.95 }}
                         className="text-[#94A3B8] hover:text-[#4ADE80] transition-colors duration-200"
                       >
-                        <FaTwitter className="w-4 h-4 sm:w-5 sm:h-5" />
+                        <FaTwitter className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                       </motion.a>
                       <motion.a
                         href={dev.telegram}
@@ -618,7 +621,7 @@ const Developers = () => {
                         whileTap={{ scale: 0.95 }}
                         className="text-[#94A3B8] hover:text-[#4ADE80] transition-colors duration-200"
                       >
-                        <FaTelegram className="w-4 h-4 sm:w-5 sm:h-5" />
+                        <FaTelegram className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                       </motion.a>
                       <motion.a
                         href={`mailto:${dev.email}`}
@@ -626,7 +629,7 @@ const Developers = () => {
                         whileTap={{ scale: 0.95 }}
                         className="text-[#94A3B8] hover:text-[#4ADE80] transition-colors duration-200"
                       >
-                        <FaEnvelope className="w-4 h-4 sm:w-5 sm:h-5" />
+                        <FaEnvelope className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                       </motion.a>
                       <motion.a
                         href={dev.portfolio}
@@ -636,7 +639,7 @@ const Developers = () => {
                         whileTap={{ scale: 0.95 }}
                         className="text-[#94A3B8] hover:text-[#4ADE80] transition-colors duration-200"
                       >
-                        <FaGlobe className="w-4 h-4 sm:w-5 sm:h-5" />
+                        <FaGlobe className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                       </motion.a>
                     </div>
                   </div>
@@ -648,16 +651,16 @@ const Developers = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="col-span-full flex flex-col items-center justify-center py-12 sm:py-16 px-4"
+            className="col-span-full flex flex-col items-center justify-center py-8 sm:py-12 px-4"
           >
-            <div className="bg-[#1E293B] rounded-xl p-6 sm:p-8 border border-[#334155] text-center max-w-md w-full">
-              <div className="text-[#4ADE80] mb-4">
-                <FaFilter className="w-6 h-6 sm:w-8 sm:h-8 mx-auto opacity-50" />
+            <div className="bg-[#1E293B] rounded-xl p-4 sm:p-6 border border-[#334155] text-center max-w-md w-full">
+              <div className="text-[#4ADE80] mb-3">
+                <FaFilter className="w-5 h-5 sm:w-6 sm:h-6 mx-auto opacity-50" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-[#E2E8F0] mb-2">
+              <h3 className="text-base sm:text-lg font-semibold text-[#E2E8F0] mb-2">
                 No developers found
               </h3>
-              <p className="text-xs sm:text-sm text-[#94A3B8]">
+              <p className="text-xs text-[#94A3B8]">
                 No developers match your current filter criteria. Try adjusting
                 your filters or
                 <button
