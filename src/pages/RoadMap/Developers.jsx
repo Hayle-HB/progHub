@@ -19,7 +19,7 @@ import Aman from "../../assets/Images/Developers/AmanMobile.jpg";
 import Dagmawi from "../../assets/Images/Developers/Dagmawi.jpg";
 import Dawit from "../../assets/Images/Developers/DawitSema.jpg";
 import DagmawitNegash from "../../assets/Images/Developers/DagnawutNegash12.jpg";
-
+import Haymanot from "../../assets/Images/Developers/Haymanot.jpg";
 const Developers = () => {
   const [selectedRole, setSelectedRole] = useState("All");
   const [selectedSkills, setSelectedSkills] = useState(new Set(["All"]));
@@ -84,6 +84,20 @@ const Developers = () => {
       email: "dagmawimilkias@gmail.com",
       telegram: "https://t.me/DagmawiDev",
       portfolio: "https://dagmawiimilkias.netlify.app/",
+    },
+    {
+      name: "Haymanot Aweke",
+      role: "UI/UX designer",
+      image: Haymanot,
+      bio: " A skilled UI/UX designer creating intuitive, user-centered digital experiences",
+      skills: ["prototype", "Figma", "Wireframe", "User research"],
+      GitHub: "https://github.com/hanabif",
+      linkedin: "https://www.linkedin.com/in/haymanot-aweke?",
+      twitter: " ",
+      email: "haymanotaweke9@gmail.com",
+      telegram: "https://t.me/Nanamicrush",
+      portfolio:
+        "https://www.figma.com/design/n2xiAlxoQuVe3sIkKCFADo/Haymanot-Aweke-portfolio?node-id=0-1&t=DsMjOvPqTI2RMr4g-1",
     },
     {
       name: "Gizachew Mohammed",
