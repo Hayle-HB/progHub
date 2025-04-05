@@ -368,7 +368,7 @@ const JoinForm = ({ position, onBack }) => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className={`${styles.cardBg} rounded-xl border ${styles.border} p-6 sm:p-8 shadow-lg`}
+        // className={`${styles.cardBg} rounded-xl border ${styles.border} p-6 sm:p-8 shadow-lg`}
       >
         <div className="flex items-center mb-6">
           <motion.button
