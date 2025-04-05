@@ -1,0 +1,38 @@
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/teams",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/about",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/member",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/core",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/developers",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/leaders",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/games",
+      "dest": "/index.html"
+    }
+  ]
+}
