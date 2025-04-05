@@ -15,11 +15,12 @@ import {
 import Gizachew from "../../assets/Images/Developers/Gizachewu.jpg";
 import Haylemeskel from "../../assets/Images/Developers/Haylemeskel.jpg";
 import Nurhusen from "../../assets/Images/Developers/Nurhusen.jpg";
-import Aman from "../../assets/Images/Developers/AmanMobile.jpg";
+import Amanuel from "../../assets/Images/Developers/AmanMobile.jpg";
 import Dagmawi from "../../assets/Images/Developers/Dagmawi.jpg";
 import Dawit from "../../assets/Images/Developers/DawitSema.jpg";
 import DagmawitNegash from "../../assets/Images/Developers/DagnawutNegash12.jpg";
 import Haymanot from "../../assets/Images/Developers/Haymanot.jpg";
+import Bezawit_A from "../../assets/Images/Developers/Bezawit_A.jpg";
 const Developers = () => {
   const [selectedRole, setSelectedRole] = useState("All");
   const [selectedSkills, setSelectedSkills] = useState(new Set(["All"]));
@@ -145,6 +146,19 @@ const Developers = () => {
       portfolio: "https://dawitsema.vercel.app/",
     },
     {
+      name: "Bezawit Yehalem",
+      role: "UI/UX designer",
+      image: Bezawit_A,
+      bio: "Passionate about building scalable applications and mentoring junior developers.",
+      skills: ["Figma", "Prototype", "Wireframe", "React", "TailwindCSS"],
+      github: "https://github.com/bezu3007",
+      linkedin: "https://www.linkedin.com/in/bezawit-yehalem",
+      twitter: "",
+      email: "bezayayi@gmail.com",
+      telegram: "https://t.me/bezu3022",
+      portfolio: "",
+    },
+    {
       name: "Nurhusen mohammedteum",
       role: "Frontend Developer",
       image: Nurhusen,
@@ -170,7 +184,7 @@ const Developers = () => {
     {
       name: "Amanuel Yosef",
       role: "Mobile App Developer",
-      image: Aman,
+      image: Amanuel,
       bio: "Freelance Mobile App Developer | Crafting beautiful, user-friendly apps with Kotlin, Jetpack Compose & Firebase. Let's turn your app idea into reality! DM for collaborations.",
       skills: ["Kotlin", "Jetpack compose", "Python", "Flutter"],
       github: "https://github.com/amanuelyosef",
@@ -178,7 +192,6 @@ const Developers = () => {
       twitter: "https://x.com/AmanuYosi",
       email: "amanuyosi@gmail.com",
       telegram: "https://t.me/proaman777",
-      portfolio: "https://github.com/amanuelyosef",
     },
   ];
 
