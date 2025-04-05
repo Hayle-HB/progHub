@@ -5,34 +5,24 @@
       "destination": "/index.html"
     }
   ],
-  "routes": [
+  "headers": [
     {
-      "src": "/teams",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
     },
     {
-      "src": "/about",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/member",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/core",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/developers",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/leaders",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/games",
-      "dest": "/index.html"
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     }
   ]
 }
