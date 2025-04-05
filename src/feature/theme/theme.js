@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   themePreference: "system", // 'light', 'dark', or 'system'
-  systemTheme: "light", // Tracks system theme when preference is 'system'
-  currentTheme: "light", // The actual theme being applied
+  systemTheme: "dark", // Tracks system theme when preference is 'system'
+  currentTheme: "dark", // The actual theme being applied
 };
 
 const themeSlice = createSlice({

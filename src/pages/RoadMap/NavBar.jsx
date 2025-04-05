@@ -28,6 +28,11 @@ const NavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
 
+  // Scroll to top when route changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -84,6 +89,8 @@ const NavBar = () => {
   const handleNavigation = (path) => {
     navigate(path);
     setIsMobileMenuOpen(false);
+    // Ensure scroll to top when navigating
+    window.scrollTo(0, 0);
   };
 
   const handleCloseMenu = () => {
@@ -101,7 +108,10 @@ const NavBar = () => {
           >
             <div className="flex items-center justify-between p-3 rounded-b-lg">
               <div className="flex items-center gap-2">
-                <span className="text-lg font-bold bg-gradient-to-r from-[#4ADE80] via-[#00CED1] to-[#FF8C00] text-transparent bg-clip-text cursor-pointer">
+                <span
+                  onClick={() => handleNavigation("/")}
+                  className="text-lg font-bold bg-gradient-to-r from-[#4ADE80] via-[#00CED1] to-[#FF8C00] text-transparent bg-clip-text cursor-pointer"
+                >
                   progHubs
                 </span>
               </div>
