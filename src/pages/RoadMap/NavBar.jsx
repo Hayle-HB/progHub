@@ -124,11 +124,11 @@ const NavBar = () => {
                       className={`relative px-4 py-2 rounded-md transition-all duration-300 cursor-pointer flex items-center gap-2
                         ${
                           location.pathname === item.path
-                            ? "text-[#4ADE80]"
-                            : "text-[#94A3B8] hover:text-[#E2E8F0]"
+                            ? "text-white bg-[#4ADE80]/20 font-medium"
+                            : "text-[#94A3B8] hover:text-white hover:bg-[#334155]/50"
                         }`}
-                      whileHover={{ scale: 1.01 }}
-                      whileTap={{ scale: 0.99 }}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
                     >
                       <item.icon className="w-4 h-4 flex-shrink-0" />
                       <span className="text-sm font-medium whitespace-nowrap">
@@ -150,7 +150,7 @@ const NavBar = () => {
                   ))}
                 </nav>
                 {/* Theme Toggle Button */}
-                <motion.button
+                {/* <motion.button
                   onClick={toggleTheme}
                   className="p-2 rounded-lg hover:bg-[#334155]/50 transition-colors cursor-pointer"
                   whileHover={{ scale: 1.05 }}
@@ -161,7 +161,7 @@ const NavBar = () => {
                   ) : (
                     <FaSun className="w-4 h-4 text-[#4ADE80]" />
                   )}
-                </motion.button>
+                </motion.button> */}
               </div>
             </div>
           </motion.div>
@@ -253,10 +253,10 @@ const NavBar = () => {
                           }
                           ${
                             location.pathname === item.path
-                              ? "bg-[#4ADE80]/10 text-[#4ADE80]"
-                              : "text-[#94A3B8] hover:bg-[#334155]/50"
+                              ? "bg-[#4ADE80]/20 text-white font-medium"
+                              : "text-[#94A3B8] hover:bg-[#334155]/50 hover:text-white"
                           }`}
-                        whileTap={{ scale: 0.99 }}
+                        whileTap={{ scale: 0.98 }}
                       >
                         <div className="flex items-center gap-3 w-full">
                           <item.icon className="w-5 h-5 flex-shrink-0" />

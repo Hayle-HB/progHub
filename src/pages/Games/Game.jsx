@@ -51,7 +51,7 @@ const Game = () => {
       <div className="w-full max-w-2xl mx-auto text-center text-sm text-[#94A3B8] mt-4 px-4">
         <p className="max-w-md mx-auto">
           How to Play: Click cards to flip them, match pairs of identical cards,
-          and complete all matches before time runs out. 
+          and complete all matches before time runs out.
         </p>
       </div>
     </div>

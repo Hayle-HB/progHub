@@ -53,6 +53,8 @@ const App = () => {
                 <Route path="/developers" element={<Developers />} />
                 <Route path="/leaders" element={<Leaders />} />
                 <Route path="/games" element={<Game />} />
+                <Route path="/games/memory" element={<Game />} />
+                <Route path="/games/word" element={<Game />} />
               </Routes>
             </div>
             <Footer />

@@ -21,6 +21,9 @@ import Dawit from "../../assets/Images/Developers/DawitSema.jpg";
 import DagmawitNegash from "../../assets/Images/Developers/DagnawutNegash12.jpg";
 import Haymanot from "../../assets/Images/Developers/Haymanot.jpg";
 import Bezawit_A from "../../assets/Images/Developers/Bezawit_A.jpg";
+import YonatanGetachew from "../../assets/Images/Developers/YonatanGetachew.jpg";
+import AbelMekonen from "../../assets/Images/Developers/Abel_.jpg";
+import DanielYilma from "../../assets/Images/Developers/DaneilYilma.jpeg";
 const Developers = () => {
   const [selectedRole, setSelectedRole] = useState("All");
   const [selectedSkills, setSelectedSkills] = useState(new Set(["All"]));
@@ -192,6 +195,49 @@ const Developers = () => {
       twitter: "https://x.com/AmanuYosi",
       email: "amanuyosi@gmail.com",
       telegram: "https://t.me/proaman777",
+    },
+    {
+      name: "Yonatan Getachew",
+      role: "Machine Learning Engineer",
+      image: YonatanGetachew,
+      bio: "Seeing the future to AGI and building cool things to reach out there.",
+      skills: [
+        "LLM",
+        "DeepLearning",
+        "Anomaly Detection",
+        "Reinforcement Leraning",
+      ],
+      github: "https://github.com/jajos12",
+      linkedin: "https://linkedin.com/yonatangetachew98a789245",
+      twitter: "https://twitter.com/alexchen",
+      email: "yonatangetachew91@gmail.com",
+      telegram: "https://t.me/jajos77",
+    },
+    {
+      name: "Abel Mekonen",
+      role: "Full Stack Developer",
+      image: AbelMekonen,
+      bio: "Passionate about building helpful and useful applications",
+      skills: ["React", "Django", " MySQL", "Javascript"],
+      github: "https://github.com/bella-247",
+      linkedin: "https://www.linkedin.com/in/abel-mekonen-89b57b323",
+      twitter: "",
+      email: "abelmekonen247@gmail.com",
+      telegram: "https://t.me/ydkbellathelatest",
+      portfolio: "",
+    },
+    {
+      name: "Daniel Yilma",
+      role: "Backend Developer",
+      image: DanielYilma,
+      bio: "Passionate backend developer.",
+      skills: ["Flask", "Django", "Node.js"],
+      github: "https://github.com/Danielyilma",
+      linkedin: "https://www.linkedin.com/in/daniel-yilma-858135256/",
+      twitter: "https://x.com/DanielYilm66671",
+      email: "deathland2352@gmail.com",
+      telegram: "https://t.me/Daniy2r4",
+      portfolio: "",
     },
   ];
 
