@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FaGithub,
@@ -24,10 +24,62 @@ import Bezawit_A from "../../assets/Images/Developers/Bezawit_A.jpg";
 import YonatanGetachew from "../../assets/Images/Developers/YonatanGetachew.jpg";
 import AbelMekonen from "../../assets/Images/Developers/Abel_.jpg";
 import DanielYilma from "../../assets/Images/Developers/DaneilYilma.jpeg";
+import HananAb from "../../assets/Images/Developers/HananAb (2).jpeg";
+import Amira from "../../assets/Images/Developers/Amira.jpg";
+import Mqkda from "../../assets/Images/Developers/Makqida.jpg";
+import YordanosH from "../../assets/Images/Developers/YordanosH.jpg";
 const Developers = () => {
   const [selectedRole, setSelectedRole] = useState("All");
   const [selectedSkills, setSelectedSkills] = useState(new Set(["All"]));
   const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [pinnedDeveloper, setPinnedDeveloper] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Load pinned developer from localStorage on component mount
+  useEffect(() => {
+    const storedPinnedDev = localStorage.getItem("pinnedDeveloper");
+    if (storedPinnedDev) {
+      const { email, timestamp } = JSON.parse(storedPinnedDev);
+      // Check if the stored data is less than 24 hours old
+      if (Date.now() - timestamp < 24 * 60 * 60 * 1000) {
+        setPinnedDeveloper(email);
+      } else {
+        localStorage.removeItem("pinnedDeveloper");
+      }
+    }
+  }, []);
+
+  // Handle URL hash changes
+  useEffect(() => {
+    const handleHashChange = async () => {
+      setIsLoading(true);
+      const hash = window.location.hash.slice(1); // Remove the # symbol
+      if (hash) {
+        const developer = developers.find((dev) => dev.email === hash);
+        if (developer) {
+          setPinnedDeveloper(hash);
+          // Store in localStorage with timestamp
+          localStorage.setItem(
+            "pinnedDeveloper",
+            JSON.stringify({
+              email: hash,
+              timestamp: Date.now(),
+            })
+          );
+        }
+      }
+      // Simulate a small delay to show the loading state
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      setIsLoading(false);
+    };
+
+    // Initial check
+    handleHashChange();
+
+    // Listen for hash changes
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
 
   const developers = [
     {
@@ -239,6 +291,57 @@ const Developers = () => {
       telegram: "https://t.me/Daniy2r4",
       portfolio: "",
     },
+    {
+      name: "Hanan Abdulshikur",
+      role: "Frontend Developer",
+      bio: "Passionate Frontend Developer creating user-friendly, responsive web applications with a focus on design and functionality.",
+      skills: ["React", "tailwind", "next.js", "shadcn"],
+      github: "https://github.com/devhan-hub",
+      linkedin: "https://www.linkedin.com/in/hanan-abdulshikur/",
+      twitter: "",
+      email: "hanabduman@gmail.com",
+      telegram: "https://t.me/hanuninaaa",
+      image: HananAb,
+    },
+
+    {
+      name: "Amira Abdurahman",
+      role: "Frontend Developer",
+      image: Amira,
+      bio: "Passionate about crafting responsive, user-friendly websites that merge clean code with sleek design",
+      skills: ["React", "Node.js", "TypeScript", "AWS"],
+      github: "https://github.com/ami798",
+      linkedin: "https://www.linkedin.com/in/amira-abdurahman-282704298/",
+      twitter: "https://x.com/amiprin7",
+      email: "amiraabdurahman8@gmail.com",
+      telegram: "https://t.me/amiprin7",
+    },
+    {
+      name: "Mqkda Yoseph ",
+      role: "Full Stack Developer",
+      bio: "Passionate about building scalable applications and mentoring junior developers.",
+      skills: ["React", "Node.js", "Dart", "Flutter"],
+      github: "https://github.com/Makda-Yoseph",
+      linkedin:
+        "https://www.linkedin.com/in/makda-zewge-08b145289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      twitter: "",
+      email: "makdayosephzewge@gmail.com",
+      telegram: "https://t.me/makl-da",
+      image: Mqkda,
+    },
+    {
+      name: "Yordanos Hailu",
+      role: "UI/UX designer",
+      bio: "Dedicated to creating user-centered designs that enhance user experience.",
+      skills: ["Figma", "Wireframe", "Prototyping", "User Centric Design"],
+      linkedin: "https://www.linkedin.com/in/yordanos-hailu/",
+      email: "yordiih59@gmail.com",
+      telegram: "https://t.me/yordih00",
+      portfolio: "https://dribbble.com/yordiHailu",
+      twitter: "",
+      github: "",
+      image: YordanosH,
+    },
   ];
 
   // Normalize skills to prevent case-sensitive duplicates
@@ -286,9 +389,9 @@ const Developers = () => {
     setSelectedSkills(new Set(["All"]));
   };
 
-  // Update the filter logic to be case-insensitive
+  // Update the filter logic to include pinned developer
   const filteredDevelopers = useMemo(() => {
-    return developers.filter((dev) => {
+    let filtered = developers.filter((dev) => {
       const roleMatch = selectedRole === "All" || dev.role === selectedRole;
       const skillsMatch =
         selectedSkills.has("All") ||
@@ -300,7 +403,38 @@ const Developers = () => {
         );
       return roleMatch && skillsMatch;
     });
-  }, [selectedRole, selectedSkills]);
+
+    // Find Haylemeskel's index
+    const haylemeskelIndex = filtered.findIndex(
+      (dev) => dev.email === "haylemeskelhaylemariam@gmail.com"
+    );
+
+    // If Haylemeskel is found and he's not the pinned developer, move him to first position
+    if (
+      haylemeskelIndex !== -1 &&
+      pinnedDeveloper !== "haylemeskelhaylemariam@gmail.com"
+    ) {
+      const haylemeskel = filtered[haylemeskelIndex];
+      filtered.splice(haylemeskelIndex, 1);
+      filtered.unshift(haylemeskel);
+    }
+
+    // If there's a pinned developer and it's in the filtered list, move it to the 3rd position
+    if (pinnedDeveloper) {
+      const pinnedIndex = filtered.findIndex(
+        (dev) => dev.email === pinnedDeveloper
+      );
+      if (pinnedIndex !== -1) {
+        const pinnedDev = filtered[pinnedIndex];
+        filtered.splice(pinnedIndex, 1);
+        // Insert at the 3rd position (index 2), or at the end if there are fewer than 3 items
+        const insertPosition = Math.min(2, filtered.length);
+        filtered.splice(insertPosition, 0, pinnedDev);
+      }
+    }
+
+    return filtered;
+  }, [selectedRole, selectedSkills, pinnedDeveloper]);
 
   const activeFiltersCount =
     (selectedRole === "All" ? 0 : 1) +
@@ -449,7 +583,19 @@ const Developers = () => {
 
       {/* Developer Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
-        {filteredDevelopers.length > 0 ? (
+        {isLoading ? (
+          <div className="col-span-full flex items-center justify-center py-12">
+            <div className="relative">
+              <div className="w-12 h-12 rounded-full border-4 border-[#4ADE80]/20 border-t-[#4ADE80] animate-spin" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div
+                  className="w-8 h-8 rounded-full border-4 border-[#00CED1]/20 border-t-[#00CED1] animate-spin"
+                  style={{ animationDirection: "reverse" }}
+                />
+              </div>
+            </div>
+          </div>
+        ) : filteredDevelopers.length > 0 ? (
           filteredDevelopers.map((dev, index) => (
             <motion.div
               key={dev.name}
