@@ -175,7 +175,6 @@ const Developers = () => {
       telegram: "https://t.me/Gech192127",
       portfolio: "https://gizachewm.com",
     },
-
     {
       name: "Dawit Sema",
       role: "Mobile Developer",
@@ -404,12 +403,10 @@ const Developers = () => {
       return roleMatch && skillsMatch;
     });
 
-    // Find Haylemeskel's index
     const haylemeskelIndex = filtered.findIndex(
       (dev) => dev.email === "haylemeskelhaylemariam@gmail.com"
     );
 
-    // If Haylemeskel is found and he's not the pinned developer, move him to first position
     if (
       haylemeskelIndex !== -1 &&
       pinnedDeveloper !== "haylemeskelhaylemariam@gmail.com"
