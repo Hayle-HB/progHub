@@ -31,6 +31,7 @@ import YordanosH from "../../assets/Images/Developers/YordanosH.jpg";
 import Daniel_Temesgen from "../../assets/Images/Developers/Daniel_Temesgen.jpg";
 import Kitessa_Fikadu from "../../assets/Images/Developers/Kitessa_Fikadu.jpg";
 import Zelalem_Legesse from "../../assets/Images/Developers/Zelalem_Legesse.jpg";
+import Mistire_Daniel from "../../assets/Images/Developers/Mistire_Daniel.jpg";
 const Developers = () => {
   const [selectedRole, setSelectedRole] = useState("All");
   const [selectedSkills, setSelectedSkills] = useState(new Set(["All"]));
@@ -414,7 +415,6 @@ const Developers = () => {
     {
       name: "Abedela Bedru",
       role: "Full Stack Developer",
-      profileImg: "NOT SET YET",
       bio: "Curious mind. Disciplined soul. I build, I grow, and I never settle.",
       skills: [
         "JavaScript",
@@ -433,6 +433,19 @@ const Developers = () => {
       telegram: "https://t.me/codistiano",
       portfolio: "https://codistiano.vercel.app/",
       image: false,
+    },
+    {
+      name: "Mistire Daniel",
+      role: "Backend Developer",
+      bio: "Aspiring Junior Software Developer.",
+      skills: ["Python", "Django", "Javascript", "Git/Github"],
+      github: "https://github.com/Mistire",
+      linkedin: "https://www.linkedin.com/in/mistire-daniel-87b451229/",
+      twitter: "https://x.com/Mistire37",
+      email: "mistiredan@gmail.com",
+      telegram: "https://t.me/therealmistire",
+      portfolio: "",
+      image: Mistire_Daniel,
     },
   ];
 
