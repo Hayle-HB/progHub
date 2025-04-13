@@ -12,28 +12,8 @@ import {
   FaTimes,
 } from "react-icons/fa";
 
-import Gizachew from "../../assets/Images/Developers/Gizachewu.jpg";
-import Haylemeskel from "../../assets/Images/Developers/Haylemeskel.jpg";
-import Nurhusen from "../../assets/Images/Developers/Nurhusen.jpg";
-import Amanuel from "../../assets/Images/Developers/AmanMobile.jpg";
-import Dagmawi from "../../assets/Images/Developers/Dagmawi.jpg";
-import Dawit from "../../assets/Images/Developers/DawitSema.jpg";
-import DagmawitNegash from "../../assets/Images/Developers/DagnawutNegash12.jpg";
-import Haymanot from "../../assets/Images/Developers/Haymanot.jpg";
-import Bezawit_A from "../../assets/Images/Developers/Bezawit_A.jpg";
-import YonatanGetachew from "../../assets/Images/Developers/YonatanGetachew.jpg";
-import AbelMekonen from "../../assets/Images/Developers/Abel_.jpg";
-import DanielYilma from "../../assets/Images/Developers/DaneilYilma.jpeg";
-import HananAb from "../../assets/Images/Developers/HananAb (2).jpeg";
-import Amira from "../../assets/Images/Developers/Amira.jpg";
-import Mqkda from "../../assets/Images/Developers/Makqida.jpg";
-import YordanosH from "../../assets/Images/Developers/YordanosH.jpg";
-import Daniel_Temesgen from "../../assets/Images/Developers/Daniel_Temesgen.jpg";
-import Kitessa_Fikadu from "../../assets/Images/Developers/Kitessa_Fikadu.jpg";
-import Zelalem_Legesse from "../../assets/Images/Developers/Zelalem_Legesse.jpg";
-import Mistire_Daniel from "../../assets/Images/Developers/Mistire_Daniel.jpg";
-import Bereket_Tsegaye from "../../assets/Images/Developers/Bereket_Tsegaye.jpg";
-import Tsiyon_Gashaw from "../../assets/Images/Developers/Tsiyon_Gashaw.jpg";
+import { developers } from "../../assets/Developers/Developers";
+
 const Developers = () => {
   const [selectedRole, setSelectedRole] = useState("All");
   const [selectedSkills, setSelectedSkills] = useState(new Set(["All"]));
@@ -86,408 +66,6 @@ const Developers = () => {
     window.addEventListener("hashchange", handleHashChange);
     return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
-
-  const developers = [
-    {
-      name: "Haylemeskel Haylemariam",
-      role: "Founder & Software Developer",
-      image: Haylemeskel,
-      bio: "Founder of EcoFarmIQ and progHubs. Passionate about AI-driven solutions, team collaboration, and building impactful projects.",
-      skills: [
-        "Microservices",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "MySQL",
-        "Python",
-        "Machine Learning",
-        "REST APIs",
-        "Team Leadership",
-      ],
-      github: "https://www.github.com/Hayle-HB",
-      linkedin:
-        "https://www.linkedin.com/in/haylemeskel-haylemariam-b9212b298/",
-      twitter: "https://x.com/Hayle_HB",
-      email: "haylemeskelhaylemariam@gmail.com",
-      telegram: "https://t.me/Hayle_HB",
-      portfolio: "https://ecofarmiq.vercel.com",
-    },
-    {
-      name: "Dagmawit Negash",
-      role: "Backend Developer",
-      image: DagmawitNegash,
-      bio: "Passionate about building scalable website and mentoring junior developers.",
-      skills: ["Python", "Node.js", "Django", "Mysql", "MongoDB", "Express.js"],
-      github: "https://github.com/DagmawitN",
-      linkedin:
-        "https://www.linkedin.com/in/dagmawit-negash-1950a3304?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      twitter: "",
-      email: "21dagmawitnegash@gmail.com",
-      telegram: "https://t.me/Daginegash",
-      portfolio: "https://github.com/Cam-Link/local-server",
-    },
-    {
-      name: "Dagmawi Milkias",
-      role: "FrontEnd  Developer",
-      image: Dagmawi,
-      bio: "Highly Motivated and results-oriented Front-End Developer passionate about building responsive and visually engaging websites and web applications.Strong foundation in core web development principles and extensive experience working with leading JavaScript frameworks and libraries",
-      skills: [
-        "React",
-        "TailwindCSS",
-        "TypeScript",
-        "Figma",
-        "responsive design",
-        "networking",
-        "collaboration",
-      ],
-      github: "https://github.com/Dagi2004",
-      linkedin: "https://linkedin.com/dagmawimilkias",
-      twitter: "https://twitter.com/alexchen",
-      email: "dagmawimilkias@gmail.com",
-      telegram: "https://t.me/DagmawiDev",
-      portfolio: "https://dagmawiimilkias.netlify.app/",
-    },
-    {
-      name: "Haymanot Aweke",
-      role: "UI/UX designer",
-      image: Haymanot,
-      bio: " A skilled UI/UX designer creating intuitive, user-centered digital experiences",
-      skills: ["prototype", "Figma", "Wireframe", "User research"],
-      GitHub: "https://github.com/hanabif",
-      linkedin: "https://www.linkedin.com/in/haymanot-aweke?",
-      twitter: " ",
-      email: "haymanotaweke9@gmail.com",
-      telegram: "https://t.me/Nanamicrush",
-      portfolio:
-        "https://www.figma.com/design/n2xiAlxoQuVe3sIkKCFADo/Haymanot-Aweke-portfolio?node-id=0-1&t=DsMjOvPqTI2RMr4g-1",
-    },
-    {
-      name: "Gizachew Mohammed",
-      role: "Backend Developer",
-      image: Gizachew,
-      bio: "Backend Developer passionate about building scalable APIs, optimizing databases, and integrating AI into backend solutions.",
-      skills: [
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "MySQL",
-        "Python",
-        "REST APIs",
-      ],
-      github: "https://github.com/gechjs",
-      linkedin: "https://www.linkedin.com/in/gizachew-mohammed/",
-      twitter: "https://twitter.com/GizachewMo50513",
-      email: "gizachew980@gmail.com",
-      telegram: "https://t.me/Gech192127",
-      portfolio: "https://gizachewm.com",
-    },
-    {
-      name: "Dawit Sema",
-      role: "Mobile Developer",
-      image: Dawit,
-      bio: "Experienced in building scalable Flutter applications, AI automation, and backend systems. Passionate about mentoring and optimizing workflows.",
-      skills: [
-        "Flutter",
-        "Dart",
-        "React",
-        "TailwindCSS",
-        "TypeScript",
-        "Python",
-        "Automation",
-        "Django",
-        "n8n",
-        "Make.com",
-      ],
-      github: "https://github.com/DawitSema",
-      linkedin: "https://linkedin.com/in/DawitSema",
-      twitter: "https://twitter.com/DawitSema",
-      email: "dawitsema2004@gmail.com",
-      telegram: "https://t.me/DawitSema",
-      portfolio: "https://dawitsema.vercel.app/",
-    },
-    {
-      name: "Bezawit Yehalem",
-      role: "UI/UX designer",
-      image: Bezawit_A,
-      bio: "Passionate about building scalable applications and mentoring junior developers.",
-      skills: ["Figma", "Prototype", "Wireframe", "React", "TailwindCSS"],
-      github: "https://github.com/bezu3007",
-      linkedin: "https://www.linkedin.com/in/bezawit-yehalem",
-      twitter: "",
-      email: "bezayayi@gmail.com",
-      telegram: "https://t.me/bezu3022",
-      portfolio: "",
-    },
-    {
-      name: "Nurhusen mohammedteum",
-      role: "Frontend Developer",
-      image: Nurhusen,
-      bio: "Fullstack developer specialized on frontend development Passionate about building scalable applications and mentoring junior developers.",
-      skills: [
-        "React",
-        "Next.js",
-        "TypeScript",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "Javascript",
-        "MySql",
-      ],
-      github: "https://github.com/nurhussenm",
-      linkedin: "https://www.linkedin.com/in/nurhusenm",
-      twitter: "https://x.com/NURHussenM74947",
-      email: "mohammedteumnurhusen@gmail.com",
-      telegram: "https://t.me/NUMUTU",
-      portfolio: "https://nurhussen.netlify.app",
-    },
-    {
-      name: "Amanuel Yosef",
-      role: "Mobile App Developer",
-      image: Amanuel,
-      bio: "Freelance Mobile App Developer | Crafting beautiful, user-friendly apps with Kotlin, Jetpack Compose & Firebase. Let's turn your app idea into reality! DM for collaborations.",
-      skills: ["Kotlin", "Jetpack compose", "Python", "Flutter"],
-      github: "https://github.com/amanuelyosef",
-      linkedin: "https://www.linkedin.com/in/amanuel-yosef-ab2685333/",
-      twitter: "https://x.com/AmanuYosi",
-      email: "amanuyosi@gmail.com",
-      telegram: "https://t.me/proaman777",
-    },
-    {
-      name: "Yonatan Getachew",
-      role: "Machine Learning Engineer",
-      image: YonatanGetachew,
-      bio: "Seeing the future to AGI and building cool things to reach out there.",
-      skills: [
-        "LLM",
-        "DeepLearning",
-        "Anomaly Detection",
-        "Reinforcement Leraning",
-      ],
-      github: "https://github.com/jajos12",
-      linkedin: "https://linkedin.com/yonatangetachew98a789245",
-      twitter: "https://twitter.com/alexchen",
-      email: "yonatangetachew91@gmail.com",
-      telegram: "https://t.me/jajos77",
-    },
-    {
-      name: "Abel Mekonen",
-      role: "Full Stack Developer",
-      image: AbelMekonen,
-      bio: "Passionate about building helpful and useful applications",
-      skills: ["React", "Django", " MySQL", "Javascript"],
-      github: "https://github.com/bella-247",
-      linkedin: "https://www.linkedin.com/in/abel-mekonen-89b57b323",
-      twitter: "",
-      email: "abelmekonen247@gmail.com",
-      telegram: "https://t.me/ydkbellathelatest",
-      portfolio: "",
-    },
-    {
-      name: "Daniel Yilma",
-      role: "Backend Developer",
-      image: DanielYilma,
-      bio: "Passionate backend developer.",
-      skills: ["Flask", "Django", "Node.js"],
-      github: "https://github.com/Danielyilma",
-      linkedin: "https://www.linkedin.com/in/daniel-yilma-858135256/",
-      twitter: "https://x.com/DanielYilm66671",
-      email: "deathland2352@gmail.com",
-      telegram: "https://t.me/Daniy2r4",
-      portfolio: "",
-    },
-    {
-      name: "Hanan Abdulshikur",
-      role: "Frontend Developer",
-      bio: "Passionate Frontend Developer creating user-friendly, responsive web applications with a focus on design and functionality.",
-      skills: ["React", "tailwind", "next.js", "shadcn"],
-      github: "https://github.com/devhan-hub",
-      linkedin: "https://www.linkedin.com/in/hanan-abdulshikur/",
-      twitter: "",
-      email: "hanabduman@gmail.com",
-      telegram: "https://t.me/hanuninaaa",
-      image: HananAb,
-    },
-
-    {
-      name: "Amira Abdurahman",
-      role: "Frontend Developer",
-      image: Amira,
-      bio: "Passionate about crafting responsive, user-friendly websites that merge clean code with sleek design",
-      skills: ["React", "Node.js", "TypeScript", "AWS"],
-      github: "https://github.com/ami798",
-      linkedin: "https://www.linkedin.com/in/amira-abdurahman-282704298/",
-      twitter: "https://x.com/amiprin7",
-      email: "amiraabdurahman8@gmail.com",
-      telegram: "https://t.me/amiprin7",
-    },
-    {
-      name: "Mqkda Yoseph ",
-      role: "Full Stack Developer",
-      bio: "Passionate about building scalable applications and mentoring junior developers.",
-      skills: ["React", "Node.js", "Dart", "Flutter"],
-      github: "https://github.com/Makda-Yoseph",
-      linkedin:
-        "https://www.linkedin.com/in/makda-zewge-08b145289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      twitter: "",
-      email: "makdayosephzewge@gmail.com",
-      telegram: "https://t.me/makl-da",
-      image: Mqkda,
-    },
-    {
-      name: "Yordanos Hailu",
-      role: "UI/UX designer",
-      bio: "Dedicated to creating user-centered designs that enhance user experience.",
-      skills: ["Figma", "Wireframe", "Prototyping", "User Centric Design"],
-      linkedin: "https://www.linkedin.com/in/yordanos-hailu/",
-      email: "yordiih59@gmail.com",
-      telegram: "https://t.me/yordih00",
-      portfolio: "https://dribbble.com/yordiHailu",
-      twitter: "",
-      github: "",
-      image: YordanosH,
-    },
-    {
-      name: "Daniel Temesgen",
-      role: "Fullstack Developer",
-      image: Daniel_Temesgen,
-      bio: "hello new world.",
-      skills: [
-        "Node.js",
-        "Javascript",
-        "Tailwind",
-        "PHP",
-        "React",
-        "NextJs",
-        "SQL",
-        "MongoDB",
-      ],
-      github: "https://github.com/hope-dies-here",
-      linkedin: "https://www.linkedin.com/in/daniel-temesgen-a560b2353",
-      twitter: "https://twitter.com/",
-      email: "onyourleftpal@gmail.com",
-      telegram: "https://t.me/o_uranus",
-      portfolio: "https://dannny-pf.netlify.app",
-    },
-    {
-      name: "Kitessa Fikadu",
-      role: "Backend Developer",
-      profileImg: "",
-      bio: "Passionate about building scalable backend and AI-driven solutions.",
-      skills: [
-        "FastAPI",
-        "Django",
-        "NestJS",
-        "Gin",
-        "Clean Architecture",
-        "Microservices",
-        "Machine Learning",
-      ],
-      github: "https://github.com/kitessafikadu",
-      linkedin: "https://linkedin.com/kitessafikadu",
-      twitter: "https://twitter.com/kitessafikadu",
-      email: "kitessafikadu@gmail.com",
-      telegram: "https://t.me/kitessafikadu",
-      image: Kitessa_Fikadu,
-    },
-    {
-      name: "Zelalem Legesse",
-      role: "Full Stack Developer",
-      profileImg: "https://api.dicebear.com/7.x/avataaars/svg?seed=zelalem",
-      bio: "A passionate Full stack developer building high-performance, scalable, and user-friendly web applications.",
-      skills: [
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "JavaScript",
-        "React",
-        "GitHub",
-        "Git",
-        "REST API",
-        "PostgreSQL",
-        "Authentication",
-      ],
-      github: "https://github.com/zelalem888",
-      linkedin: "https://www.linkedin.com/in/zelalemlegesse/",
-      twitter: "https://x.com/ZelalemLegess13",
-      email: "legessezelalem888@gmail.com",
-      telegram: "https://t.me/Zlelew",
-      portfolio: "https://zelalemportfolio.vercel.app/",
-      image: Zelalem_Legesse,
-    },
-    {
-      name: "Abedela Bedru",
-      role: "Full Stack Developer",
-      bio: "Curious mind. Disciplined soul. I build, I grow, and I never settle.",
-      skills: [
-        "JavaScript",
-        "React",
-        "Node.js",
-        "ExpressJS",
-        "MongoDB",
-        "EJS",
-        "HTML",
-        "CSS",
-      ],
-      github: "https://github.com/codistiano",
-      linkedin: "https://linkedin.com/in/abedela-bedru",
-      twitter: "https://twitter.com/codistiano",
-      email: "codistiano@gmail.com",
-      telegram: "https://t.me/codistiano",
-      portfolio: "https://codistiano.vercel.app/",
-      image: false,
-    },
-    {
-      name: "Mistire Daniel",
-      role: "Backend Developer",
-      bio: "Aspiring Junior Software Developer.",
-      skills: ["Python", "Django", "Javascript", "Git/Github"],
-      github: "https://github.com/Mistire",
-      linkedin: "https://www.linkedin.com/in/mistire-daniel-87b451229/",
-      twitter: "https://x.com/Mistire37",
-      email: "mistiredan@gmail.com",
-      telegram: "https://t.me/therealmistire",
-      portfolio: "",
-      image: Mistire_Daniel,
-    },
-    {
-      name: "Bereket Tsegaye",
-      role: "Full Stack Developer",
-      profileImg:
-        "https://api.dicebear.com/7.x/avataaars/svg?seed=%22bereket%22",
-      bio: "A passionate Full stack developer building high-performance, scalable, and user-friendly web applications.",
-      skills: [
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "JavaScript",
-        "React",
-        "Git",
-        "REST API",
-        "PostgreSQL",
-        "Authentication",
-      ],
-      github: "https://github.com/treehouseapps",
-      linkedin: "https://www.linkedin.com/in/berekettsegaye/",
-      twitter: "https://x.com/Bereket54467899",
-      email: "bbekijunior1@gmail.com",
-      telegram: "https://t.me/B_smile",
-      portfolio: "https://bekijunior.vercel.app/",
-      image: Bereket_Tsegaye,
-    },
-    {
-      name: "Tsiyon Gashaw",
-      role: "Backend Developer | Mobile App Enthusiast",
-      bio: "Driven by impact, I craft clean backend systems and sleek mobile apps — blending logic and design to solve real-world problems.",
-      skills: ["Django", "Flutter", "RestApi", "Figma"],
-      github: "https://github.com/tsitiii",
-      linkedin: "https://www.linkedin.com/in/tsiyon-gashaw-0b12b92a0",
-      twitter: "https://x.com/zitiii9",
-      email: "tsiyong8@gmail.com",
-      telegram: "https://t.me/Yok_submissive",
-      portfolio: "http://tsiyongashaw.netlify.app/",
-      image: Tsiyon_Gashaw,
-    },
-  ];
 
   // Normalize skills to prevent case-sensitive duplicates
   const normalizeSkill = (skill) => skill.toLowerCase().trim();
@@ -917,6 +495,198 @@ const Developers = () => {
             </div>
           </motion.div>
         )}
+      </div>
+
+      {/* Bottom Content */}
+      <DevelopersBottom />
+    </div>
+  );
+};
+
+const DevelopersBottom = () => {
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+      {/* Statistics Section */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        <div className="bg-[#1E293B] rounded-xl p-8 border border-[#334155] relative overflow-hidden">
+          <div className="relative">
+            <h3 className="text-4xl font-bold text-[#4ADE80] mb-3">20+</h3>
+            <p className="text-[#94A3B8] text-lg">Active Developers</p>
+            <div className="absolute -right-2 -bottom-2 text-[#4ADE80]/10 text-6xl font-bold">
+              20+
+            </div>
+          </div>
+        </div>
+        <div className="bg-[#1E293B] rounded-xl p-8 border border-[#334155] relative overflow-hidden">
+          <div className="relative">
+            <h3 className="text-4xl font-bold text-[#4ADE80] mb-3">15+</h3>
+            <p className="text-[#94A3B8] text-lg">Tech Stacks</p>
+            <div className="absolute -right-2 -bottom-2 text-[#4ADE80]/10 text-6xl font-bold">
+              15+
+            </div>
+          </div>
+        </div>
+        <div className="bg-[#1E293B] rounded-xl p-8 border border-[#334155] relative overflow-hidden">
+          <div className="relative">
+            <h3 className="text-4xl font-bold text-[#4ADE80] mb-3">50+</h3>
+            <p className="text-[#94A3B8] text-lg">Projects Completed</p>
+            <div className="absolute -right-2 -bottom-2 text-[#4ADE80]/10 text-6xl font-bold">
+              50+
+            </div>
+          </div>
+        </div>
+        <div className="bg-[#1E293B] rounded-xl p-8 border border-[#334155] relative overflow-hidden">
+          <div className="relative">
+            <h3 className="text-4xl font-bold text-[#4ADE80] mb-3">100%</h3>
+            <p className="text-[#94A3B8] text-lg">Satisfaction Rate</p>
+            <div className="absolute -right-2 -bottom-2 text-[#4ADE80]/10 text-6xl font-bold">
+              100%
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Testimonials Section */}
+      <div className="mb-20">
+        <h2 className="text-3xl sm:text-4xl font-bold text-[#E2E8F0] mb-12 text-center">
+          What Our Developers Say
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="bg-[#1E293B] rounded-xl p-8 border border-[#334155] relative">
+            <div className="flex flex-col h-full">
+              <div className="flex-grow">
+                <div className="flex items-center mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg
+                      key={i}
+                      className="w-5 h-5 text-[#4ADE80]"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-[#94A3B8] text-lg mb-6">
+                  "Being part of this team has been an incredible journey. The
+                  collaborative environment and cutting-edge projects have
+                  helped me grow exponentially."
+                </p>
+              </div>
+              <div className="flex items-center">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4ADE80] to-[#3B82F6] flex items-center justify-center text-[#1E293B] font-bold text-lg">
+                  HD
+                </div>
+                <div className="ml-4">
+                  <h4 className="text-[#E2E8F0] font-semibold text-lg">
+                    Haylemeskel
+                  </h4>
+                  <p className="text-[#94A3B8] text-sm">
+                    Founder & Lead Developer
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-[#1E293B] rounded-xl p-8 border border-[#334155] relative">
+            <div className="flex flex-col h-full">
+              <div className="flex-grow">
+                <div className="flex items-center mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg
+                      key={i}
+                      className="w-5 h-5 text-[#4ADE80]"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-[#94A3B8] text-lg mb-6">
+                  "The diversity of projects and the supportive community make
+                  this the perfect place to enhance your skills and build
+                  amazing things."
+                </p>
+              </div>
+              <div className="flex items-center">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4ADE80] to-[#3B82F6] flex items-center justify-center text-[#1E293B] font-bold text-lg">
+                  DN
+                </div>
+                <div className="ml-4">
+                  <h4 className="text-[#E2E8F0] font-semibold text-lg">
+                    Dagmawit
+                  </h4>
+                  <p className="text-[#94A3B8] text-sm">Backend Developer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-[#1E293B] rounded-xl p-8 border border-[#334155] relative">
+            <div className="flex flex-col h-full">
+              <div className="flex-grow">
+                <div className="flex items-center mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg
+                      key={i}
+                      className="w-5 h-5 text-[#4ADE80]"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-[#94A3B8] text-lg mb-6">
+                  "The opportunity to work on real-world projects and learn from
+                  experienced developers has been invaluable for my career
+                  growth."
+                </p>
+              </div>
+              <div className="flex items-center">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4ADE80] to-[#3B82F6] flex items-center justify-center text-[#1E293B] font-bold text-lg">
+                  DS
+                </div>
+                <div className="ml-4">
+                  <h4 className="text-[#E2E8F0] font-semibold text-lg">
+                    Dawit
+                  </h4>
+                  <p className="text-[#94A3B8] text-sm">Mobile Developer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Call to Action Section */}
+      <div className="bg-gradient-to-r from-[#4ADE80]/10 to-[#3B82F6]/10 rounded-xl p-8 sm:p-12 border border-[#334155] text-center">
+        <h2 className="text-2xl sm:text-3xl font-bold text-[#E2E8F0] mb-4">
+          Join Our Growing Team
+        </h2>
+        <p className="text-[#94A3B8] mb-8 max-w-2xl mx-auto">
+          Are you passionate about technology and looking for a collaborative
+          environment to grow your skills? We're always looking for talented
+          developers to join our team.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="https://t.me/Hayle_HB"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 bg-[#4ADE80] text-[#1E293B] rounded-lg font-semibold hover:bg-[#4ADE80]/90 transition-colors duration-300"
+          >
+            Contact Us
+          </a>
+          <a
+            href="https://github.com/Hayle-HB"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 border border-[#4ADE80] text-[#4ADE80] rounded-lg font-semibold hover:bg-[#4ADE80]/10 transition-colors duration-300"
+          >
+            View Our Projects
+          </a>
+        </div>
       </div>
     </div>
   );
