@@ -30,6 +30,7 @@ import Mqkda from "../../assets/Images/Developers/Makqida.jpg";
 import YordanosH from "../../assets/Images/Developers/YordanosH.jpg";
 import Daniel_Temesgen from "../../assets/Images/Developers/Daniel_Temesgen.jpg";
 import Kitessa_Fikadu from "../../assets/Images/Developers/Kitessa_Fikadu.jpg";
+import Zelalem_Legesse from "../../assets/Images/Developers/Zelalem_Legesse.jpg";
 const Developers = () => {
   const [selectedRole, setSelectedRole] = useState("All");
   const [selectedSkills, setSelectedSkills] = useState(new Set(["All"]));
@@ -385,6 +386,54 @@ const Developers = () => {
       telegram: "https://t.me/kitessafikadu",
       image: Kitessa_Fikadu,
     },
+    {
+      name: "Zelalem Legesse",
+      role: "Full Stack Developer",
+      profileImg: "https://api.dicebear.com/7.x/avataaars/svg?seed=zelalem",
+      bio: "A passionate Full stack developer building high-performance, scalable, and user-friendly web applications.",
+      skills: [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "JavaScript",
+        "React",
+        "GitHub",
+        "Git",
+        "REST API",
+        "PostgreSQL",
+        "Authentication",
+      ],
+      github: "https://github.com/zelalem888",
+      linkedin: "https://www.linkedin.com/in/zelalemlegesse/",
+      twitter: "https://x.com/ZelalemLegess13",
+      email: "legessezelalem888@gmail.com",
+      telegram: "https://t.me/Zlelew",
+      portfolio: "https://zelalemportfolio.vercel.app/",
+      image: Zelalem_Legesse,
+    },
+    {
+      name: "Abedela Bedru",
+      role: "Full Stack Developer",
+      profileImg: "NOT SET YET",
+      bio: "Curious mind. Disciplined soul. I build, I grow, and I never settle.",
+      skills: [
+        "JavaScript",
+        "React",
+        "Node.js",
+        "ExpressJS",
+        "MongoDB",
+        "EJS",
+        "HTML",
+        "CSS",
+      ],
+      github: "https://github.com/codistiano",
+      linkedin: "https://linkedin.com/in/abedela-bedru",
+      twitter: "https://twitter.com/codistiano",
+      email: "codistiano@gmail.com",
+      telegram: "https://t.me/codistiano",
+      portfolio: "https://codistiano.vercel.app/",
+      image: false,
+    },
   ];
 
   // Normalize skills to prevent case-sensitive duplicates
@@ -657,12 +706,38 @@ const Developers = () => {
               >
                 {/* Image Container */}
                 <div className="relative w-full h-48 sm:h-52 overflow-hidden rounded-t-xl bg-[#1E293B]">
-                  <img
-                    src={dev.image}
-                    alt={dev.name}
-                    className="absolute inset-0 w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1E293B] via-transparent to-transparent opacity-60" />
+                  {dev.image ? (
+                    <>
+                      <img
+                        src={dev.image}
+                        alt={dev.name}
+                        className="absolute inset-0 w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#1E293B] via-transparent to-transparent opacity-60" />
+                    </>
+                  ) : (
+                    <div className="absolute inset-0 flex flex-col items-center justify-center group-hover:bg-[#4ADE80]/5 transition-all duration-300">
+                      <div className="relative">
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#4ADE80] to-[#3B82F6] rounded-full blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-300" />
+                        <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#1E293B] border-2 border-[#4ADE80]/20 flex items-center justify-center group-hover:border-[#4ADE80]/40 transition-all duration-300">
+                          <span className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-[#4ADE80] to-[#3B82F6] text-transparent bg-clip-text">
+                            {dev.name
+                              .split(" ")
+                              .map((n) => n[0])
+                              .join("")}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="mt-4 text-center">
+                        <h3 className="text-lg sm:text-xl font-bold text-[#E2E8F0] group-hover:text-[#4ADE80] transition-colors duration-300">
+                          {dev.name}
+                        </h3>
+                        <p className="text-sm text-[#94A3B8] group-hover:text-[#3B82F6] transition-colors duration-300">
+                          {dev.role}
+                        </p>
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Content Container */}
