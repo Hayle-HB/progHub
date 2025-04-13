@@ -29,6 +29,7 @@ import Amira from "../../assets/Images/Developers/Amira.jpg";
 import Mqkda from "../../assets/Images/Developers/Makqida.jpg";
 import YordanosH from "../../assets/Images/Developers/YordanosH.jpg";
 import Daniel_Temesgen from "../../assets/Images/Developers/Daniel_Temesgen.jpg";
+import Kitessa_Fikadu from "../../assets/Images/Developers/Kitessa_Fikadu.jpg";
 const Developers = () => {
   const [selectedRole, setSelectedRole] = useState("All");
   const [selectedSkills, setSelectedSkills] = useState(new Set(["All"]));
@@ -362,6 +363,27 @@ const Developers = () => {
       email: "onyourleftpal@gmail.com",
       telegram: "https://t.me/o_uranus",
       portfolio: "https://dannny-pf.netlify.app",
+    },
+    {
+      name: "Kitessa Fikadu",
+      role: "Backend Developer",
+      profileImg: "",
+      bio: "Passionate about building scalable backend and AI-driven solutions.",
+      skills: [
+        "FastAPI",
+        "Django",
+        "NestJS",
+        "Gin",
+        "Clean Architecture",
+        "Microservices",
+        "Machine Learning",
+      ],
+      github: "https://github.com/kitessafikadu",
+      linkedin: "https://linkedin.com/kitessafikadu",
+      twitter: "https://twitter.com/kitessafikadu",
+      email: "kitessafikadu@gmail.com",
+      telegram: "https://t.me/kitessafikadu",
+      image: Kitessa_Fikadu,
     },
   ];
 
