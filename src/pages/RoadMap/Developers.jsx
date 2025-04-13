@@ -28,6 +28,7 @@ import HananAb from "../../assets/Images/Developers/HananAb (2).jpeg";
 import Amira from "../../assets/Images/Developers/Amira.jpg";
 import Mqkda from "../../assets/Images/Developers/Makqida.jpg";
 import YordanosH from "../../assets/Images/Developers/YordanosH.jpg";
+import Daniel_Temesgen from "../../assets/Images/Developers/Daniel_Temesgen.jpg";
 const Developers = () => {
   const [selectedRole, setSelectedRole] = useState("All");
   const [selectedSkills, setSelectedSkills] = useState(new Set(["All"]));
@@ -41,7 +42,7 @@ const Developers = () => {
     if (storedPinnedDev) {
       const { email, timestamp } = JSON.parse(storedPinnedDev);
       // Check if the stored data is less than 24 hours old
-      if (Date.now() - timestamp < 24 * 60 * 60 * 1000) {
+      if (Date.now() - timestamp < 30 * 24 * 60 * 60 * 1000) {
         setPinnedDeveloper(email);
       } else {
         localStorage.removeItem("pinnedDeveloper");
@@ -234,7 +235,6 @@ const Developers = () => {
       telegram: "https://t.me/NUMUTU",
       portfolio: "https://nurhussen.netlify.app",
     },
-
     {
       name: "Amanuel Yosef",
       role: "Mobile App Developer",
@@ -340,6 +340,28 @@ const Developers = () => {
       twitter: "",
       github: "",
       image: YordanosH,
+    },
+    {
+      name: "Daniel Temesgen",
+      role: "Fullstack Developer",
+      image: Daniel_Temesgen,
+      bio: "hello new world.",
+      skills: [
+        "Node.js",
+        "Javascript",
+        "Tailwind",
+        "PHP",
+        "React",
+        "NextJs",
+        "SQL",
+        "MongoDB",
+      ],
+      github: "https://github.com/hope-dies-here",
+      linkedin: "https://www.linkedin.com/in/daniel-temesgen-a560b2353",
+      twitter: "https://twitter.com/",
+      email: "onyourleftpal@gmail.com",
+      telegram: "https://t.me/o_uranus",
+      portfolio: "https://dannny-pf.netlify.app",
     },
   ];
 
