@@ -32,6 +32,8 @@ import Daniel_Temesgen from "../../assets/Images/Developers/Daniel_Temesgen.jpg"
 import Kitessa_Fikadu from "../../assets/Images/Developers/Kitessa_Fikadu.jpg";
 import Zelalem_Legesse from "../../assets/Images/Developers/Zelalem_Legesse.jpg";
 import Mistire_Daniel from "../../assets/Images/Developers/Mistire_Daniel.jpg";
+import Bereket_Tsegaye from "../../assets/Images/Developers/Bereket_Tsegaye.jpg";
+import Tsiyon_Gashaw from "../../assets/Images/Developers/Tsiyon_Gashaw.jpg";
 const Developers = () => {
   const [selectedRole, setSelectedRole] = useState("All");
   const [selectedSkills, setSelectedSkills] = useState(new Set(["All"]));
@@ -446,6 +448,44 @@ const Developers = () => {
       telegram: "https://t.me/therealmistire",
       portfolio: "",
       image: Mistire_Daniel,
+    },
+    {
+      name: "Bereket Tsegaye",
+      role: "Full Stack Developer",
+      profileImg:
+        "https://api.dicebear.com/7.x/avataaars/svg?seed=%22bereket%22",
+      bio: "A passionate Full stack developer building high-performance, scalable, and user-friendly web applications.",
+      skills: [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "JavaScript",
+        "React",
+        "Git",
+        "REST API",
+        "PostgreSQL",
+        "Authentication",
+      ],
+      github: "https://github.com/treehouseapps",
+      linkedin: "https://www.linkedin.com/in/berekettsegaye/",
+      twitter: "https://x.com/Bereket54467899",
+      email: "bbekijunior1@gmail.com",
+      telegram: "https://t.me/B_smile",
+      portfolio: "https://bekijunior.vercel.app/",
+      image: Bereket_Tsegaye,
+    },
+    {
+      name: "Tsiyon Gashaw",
+      role: "Backend Developer | Mobile App Enthusiast",
+      bio: "Driven by impact, I craft clean backend systems and sleek mobile apps — blending logic and design to solve real-world problems.",
+      skills: ["Django", "Flutter", "RestApi", "Figma"],
+      github: "https://github.com/tsitiii",
+      linkedin: "https://www.linkedin.com/in/tsiyon-gashaw-0b12b92a0",
+      twitter: "https://x.com/zitiii9",
+      email: "tsiyong8@gmail.com",
+      telegram: "https://t.me/Yok_submissive",
+      portfolio: "http://tsiyongashaw.netlify.app/",
+      image: Tsiyon_Gashaw,
     },
   ];
 
