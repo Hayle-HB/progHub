@@ -7,6 +7,7 @@ import {
   setThemePreference,
 } from "../../feature/theme/theme";
 import {
+  FaHome,
   FaInfoCircle,
   FaUserPlus,
   FaUsers,
@@ -15,7 +16,6 @@ import {
   FaGamepad,
   FaBars,
   FaTimes,
-  FaHome,
   FaSun,
   FaMoon,
 } from "react-icons/fa";
@@ -28,7 +28,6 @@ const NavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
 
-  // Scroll to top when route changes
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
@@ -49,26 +48,32 @@ const NavBar = () => {
 
   const navItems = [
     {
+      id: "home",
+      label: "Home",
+      icon: FaHome,
+      path: "/",
+    },
+    {
       id: "about",
-      label: "About progHubs",
+      label: "About Us",
       icon: FaInfoCircle,
       path: "/about",
     },
     {
       id: "member",
-      label: "Become a Member",
+      label: "Join Us",
       icon: FaUserPlus,
       path: "/member",
     },
     {
       id: "core",
-      label: "Join Core Team",
+      label: "Core Team",
       icon: FaUsers,
       path: "/core",
     },
     {
       id: "developers",
-      label: "Our Team",
+      label: "Developers",
       icon: FaCode,
       path: "/developers",
     },
@@ -89,7 +94,6 @@ const NavBar = () => {
   const handleNavigation = (path) => {
     navigate(path);
     setIsMobileMenuOpen(false);
-    // Ensure scroll to top when navigating
     window.scrollTo(0, 0);
   };
 
@@ -103,34 +107,44 @@ const NavBar = () => {
       <div className="hidden sm:block">
         <div className="fixed top-0 left-0 right-0 z-[60]">
           <motion.div
-            className={`w-full px-8 sm:px-12 lg:px-16 transition-colors duration-300
-              ${hasScrolled ? "bg-[#1E293B]" : "bg-transparent"}`}
+            className={`w-full px-8 sm:px-12 lg:px-16 transition-all duration-300
+              ${
+                hasScrolled
+                  ? "bg-[#1E293B]/95 backdrop-blur-md shadow-lg"
+                  : "bg-transparent"
+              }`}
           >
-            <div className="flex items-center justify-between p-3 rounded-b-lg">
+            <div className="flex items-center justify-between p-3">
               <div className="flex items-center gap-2">
                 <span
                   onClick={() => handleNavigation("/")}
-                  className="text-lg font-bold bg-gradient-to-r from-[#4ADE80] via-[#00CED1] to-[#FF8C00] text-transparent bg-clip-text cursor-pointer"
+                  className="text-xl font-bold bg-gradient-to-r from-[#4ADE80] via-[#00CED1] to-[#FF8C00] text-transparent bg-clip-text cursor-pointer hover:opacity-90 transition-opacity"
                 >
                   progHubs
                 </span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-4">
                 <nav className="flex items-center gap-1">
                   {navItems.map((item) => (
                     <motion.button
                       key={item.id}
                       onClick={() => handleNavigation(item.path)}
-                      className={`relative px-4 py-2 rounded-md transition-all duration-300 cursor-pointer flex items-center gap-2
+                      className={`relative px-4 py-2.5 rounded-lg transition-all duration-300 cursor-pointer flex items-center gap-2
                         ${
                           location.pathname === item.path
-                            ? "text-white bg-[#4ADE80]/20 font-medium"
+                            ? "text-white bg-[#4ADE80]/10 font-medium"
                             : "text-[#94A3B8] hover:text-white hover:bg-[#334155]/50"
                         }`}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      <item.icon className="w-4 h-4 flex-shrink-0" />
+                      <item.icon
+                        className={`w-4 h-4 flex-shrink-0 ${
+                          location.pathname === item.path
+                            ? "text-[#4ADE80]"
+                            : ""
+                        }`}
+                      />
                       <span className="text-sm font-medium whitespace-nowrap">
                         {item.label}
                       </span>
@@ -149,8 +163,7 @@ const NavBar = () => {
                     </motion.button>
                   ))}
                 </nav>
-                {/* Theme Toggle Button */}
-                {/* <motion.button
+                <motion.button
                   onClick={toggleTheme}
                   className="p-2 rounded-lg hover:bg-[#334155]/50 transition-colors cursor-pointer"
                   whileHover={{ scale: 1.05 }}
@@ -161,31 +174,35 @@ const NavBar = () => {
                   ) : (
                     <FaSun className="w-4 h-4 text-[#4ADE80]" />
                   )}
-                </motion.button> */}
+                </motion.button>
               </div>
             </div>
           </motion.div>
         </div>
-        {/* Add padding to account for fixed header */}
         <div className="h-16" />
       </div>
 
       {/* Mobile Navigation */}
       <div className="sm:hidden">
-        {/* Mobile Header */}
         <div className="fixed top-0 left-0 right-0 z-[60]">
           <motion.div
-            className={`w-full px-4 sm:px-6 transition-colors duration-300
-              ${hasScrolled ? "bg-[#1E293B]" : "bg-transparent"}`}
+            className={`w-full px-4 transition-all duration-300
+              ${
+                hasScrolled
+                  ? "bg-[#1E293B]/95 backdrop-blur-md shadow-lg"
+                  : "bg-transparent"
+              }`}
           >
-            <div className="flex items-center justify-between p-3 border-b border-[#334155]/50">
+            <div className="flex items-center justify-between p-3">
               <div className="flex items-center gap-2">
-                <span className="text-lg font-bold bg-gradient-to-r from-[#4ADE80] via-[#00CED1] to-[#FF8C00] text-transparent bg-clip-text cursor-pointer">
+                <span
+                  onClick={() => handleNavigation("/")}
+                  className="text-lg font-bold bg-gradient-to-r from-[#4ADE80] via-[#00CED1] to-[#FF8C00] text-transparent bg-clip-text cursor-pointer hover:opacity-90 transition-opacity"
+                >
                   progHubs
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                {/* Theme Toggle Button */}
                 <motion.button
                   onClick={toggleTheme}
                   className="p-2 rounded-lg hover:bg-[#334155]/50 transition-colors cursor-pointer"
@@ -213,23 +230,20 @@ const NavBar = () => {
           </motion.div>
         </div>
 
-        {/* Add padding to account for fixed header */}
         <div className="h-16" />
 
         <AnimatePresence>
           {isMobileMenuOpen && (
             <>
-              {/* Fixed Full-width Background */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="fixed inset-0 bg-[#1E293B] z-[40] cursor-pointer"
+                className="fixed inset-0 bg-[#1E293B]/95 backdrop-blur-md z-[40] cursor-pointer"
                 onClick={handleCloseMenu}
               />
 
-              {/* Menu */}
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -239,7 +253,6 @@ const NavBar = () => {
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="h-full flex flex-col">
-                  {/* Menu Items */}
                   <div className="flex-1 overflow-y-auto py-2 mt-16 scrollbar-thin scrollbar-track-[#1E293B] scrollbar-thumb-[#334155] hover:scrollbar-thumb-[#4ADE80]/20">
                     {navItems.map((item, index) => (
                       <motion.button
@@ -253,13 +266,19 @@ const NavBar = () => {
                           }
                           ${
                             location.pathname === item.path
-                              ? "bg-[#4ADE80]/20 text-white font-medium"
+                              ? "bg-[#4ADE80]/10 text-white font-medium"
                               : "text-[#94A3B8] hover:bg-[#334155]/50 hover:text-white"
                           }`}
                         whileTap={{ scale: 0.98 }}
                       >
                         <div className="flex items-center gap-3 w-full">
-                          <item.icon className="w-5 h-5 flex-shrink-0" />
+                          <item.icon
+                            className={`w-5 h-5 flex-shrink-0 ${
+                              location.pathname === item.path
+                                ? "text-[#4ADE80]"
+                                : ""
+                            }`}
+                          />
                           <span className="text-sm font-medium">
                             {item.label}
                           </span>

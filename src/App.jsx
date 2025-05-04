@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./pages/RoadMap/NavBar";
 import JoinTeam from "./pages/RoadMap/JoinTeam";
-import AboutUs from "./pages/RoadMap/AboutUs";
+import AboutUs from "./pages/AboutUs/AboutUs.jsx";
 import BecomeAMember from "./pages/RoadMap/BecomeAMember";
 import Developers from "./pages/RoadMap/Developers";
 import Leaders from "./pages/RoadMap/Leaders";
 import Game from "./pages/Games/Game";
 import Footer from "./pages/RoadMap/Footer";
-
+import Home from "./pages/Home/Home.jsx";
 // Loading spinner component
 const LoadingSpinner = () => {
   return (
@@ -46,7 +46,7 @@ const App = () => {
             <div className="py-12 px-4 sm:px-6 lg:px-8 flex-grow">
               <NavBar />
               <Routes>
-                <Route path="/" element={<AboutUs />} />
+                <Route path="/" element={<Home />} />
                 <Route path="/about" element={<AboutUs />} />
                 <Route path="/member" element={<BecomeAMember />} />
                 <Route path="/core" element={<JoinTeam />} />
