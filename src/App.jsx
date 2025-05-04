@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./pages/RoadMap/NavBar";
-import JoinTeam from "./pages/RoadMap/JoinTeam";
+import Footer from "./pages/RoadMap/Footer";
+import Home from "./pages/Home/Home.jsx";
 import AboutUs from "./pages/AboutUs/AboutUs.jsx";
+import ContactUs from "./pages/ContactUs/ContactUs.jsx";
+import JoinTeam from "./pages/RoadMap/JoinTeam";
 import BecomeAMember from "./pages/RoadMap/BecomeAMember";
 import Developers from "./pages/RoadMap/Developers";
 import Leaders from "./pages/RoadMap/Leaders";
 import Game from "./pages/Games/Game";
-import Footer from "./pages/RoadMap/Footer";
-import Home from "./pages/Home/Home.jsx";
+
 // Loading spinner component
 const LoadingSpinner = () => {
   return (
@@ -48,7 +50,8 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<AboutUs />} />
-                <Route path="/member" element={<BecomeAMember />} />
+                <Route path="/contact" element={<ContactUs />} />
+                {/* <Route path="/member" element={<BecomeAMember />} /> */}
                 <Route path="/core" element={<JoinTeam />} />
                 <Route path="/developers" element={<Developers />} />
                 <Route path="/leaders" element={<Leaders />} />

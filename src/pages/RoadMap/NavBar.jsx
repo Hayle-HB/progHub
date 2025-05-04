@@ -59,12 +59,12 @@ const NavBar = () => {
       icon: FaInfoCircle,
       path: "/about",
     },
-    {
-      id: "member",
-      label: "Join Us",
-      icon: FaUserPlus,
-      path: "/member",
-    },
+    // {
+    //   id: "member",
+    //   label: "Join Us",
+    //   icon: FaUserPlus,
+    //   path: "/member",
+    // },
     {
       id: "core",
       label: "Core Team",
@@ -88,6 +88,12 @@ const NavBar = () => {
       label: "Games",
       icon: FaGamepad,
       path: "/games",
+    },
+    {
+      id: "contact",
+      label: "Contact Us",
+      icon: FaCode,
+      path: "/contact",
     },
   ];
 
