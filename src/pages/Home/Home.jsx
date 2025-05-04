@@ -19,9 +19,9 @@ const Home = () => {
   };
 
   const stats = [
-    { number: "10K+", label: "Active Developers", color: "text-[#4ADE80]" },
-    { number: "500+", label: "Projects", color: "text-[#3B82F6]" },
-    { number: "50+", label: "Countries", color: "text-[#FF8C00]" },
+    { number: "160+", label: "Active Developers", color: "text-[#4ADE80]" },
+    { number: "x+", label: "Projects", color: "text-[#3B82F6]" },
+    { number: "2+", label: "Countries", color: "text-[#FF8C00]" },
     { number: "24/7", label: "Support", color: "text-[#4ADE80]" },
   ];
 
