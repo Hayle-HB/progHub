@@ -367,10 +367,13 @@ const JoinForm = ({ position, onBack }) => {
           }
         });
 
-        const response = await fetch("http://localhost:5000/api/applications", {
-          method: "POST",
-          body: formDataToSend,
-        });
+        const response = await fetch(
+          "https://proghubs-web-backend.onrender.com/api/applications",
+          {
+            method: "POST",
+            body: formDataToSend,
+          }
+        );
 
         const data = await response.json();
 
