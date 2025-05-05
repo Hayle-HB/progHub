@@ -35,6 +35,7 @@ const JoinForm = ({ position, onBack }) => {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [showCustomSkill, setShowCustomSkill] = useState(false);
   const [customSkill, setCustomSkill] = useState("");
+  const [apiError, setApiError] = useState("");
 
   // Theme styles
   const themeStyles = {
@@ -345,20 +346,67 @@ const JoinForm = ({ position, onBack }) => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setApiError("");
 
     if (validateForm()) {
       setIsSubmitting(true);
 
-      // Simulate form submission
-      setTimeout(() => {
-        setIsSubmitting(false);
-        setSubmitSuccess(true);
+      try {
+        const formDataToSend = new FormData();
 
-        // Don't automatically reset or redirect
-        // Let the user see the success message and manually go back
-      }, 2000);
+        // Append all form fields
+        Object.keys(formData).forEach((key) => {
+          if (key === "skills") {
+            formDataToSend.append(key, JSON.stringify(formData[key]));
+          } else if (key === "resume") {
+            formDataToSend.append(key, formData[key]);
+          } else {
+            formDataToSend.append(key, formData[key]);
+          }
+        });
+
+        const response = await fetch("http://localhost:5000/api/applications", {
+          method: "POST",
+          body: formDataToSend,
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.message || "Failed to submit application");
+        }
+
+        if (data.success) {
+          setSubmitSuccess(true);
+          // Reset form after successful submission
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            position: position || "",
+            github: "",
+            linkedin: "",
+            portfolio: "",
+            experience: "",
+            skills: [],
+            motivation: "",
+            availability: "",
+            resume: null,
+          });
+        } else {
+          throw new Error(data.message || "Failed to submit application");
+        }
+      } catch (error) {
+        console.error("Submission error:", error);
+        setApiError(
+          error.message || "Failed to submit application. Please try again."
+        );
+        setSubmitSuccess(false);
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -424,6 +472,16 @@ const JoinForm = ({ position, onBack }) => {
           </motion.div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-6">
+            {apiError && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-md"
+              >
+                <p className="text-sm font-medium">{apiError}</p>
+              </motion.div>
+            )}
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Personal Information */}
               <div className="space-y-4">
